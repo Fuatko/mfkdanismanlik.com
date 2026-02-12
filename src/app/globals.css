@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-bg: #ffffff;
+  --color-bg-muted: #f9fafb;
+  --radius: 0.75rem;
+  --spacing-section: 6rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --spacing-section: 8rem;
+  }
+}
+
+body {
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Premium minimal style */
+.prose {
+  @apply text-zinc-700 leading-relaxed;
+}
+
+.prose h2 {
+  @apply text-xl md:text-2xl font-semibold text-zinc-900 mt-10 mb-4;
+}
+
+.prose h3 {
+  @apply text-lg font-medium text-zinc-800 mt-6 mb-3;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose ul {
+  @apply list-none pl-0;
+}
+
+.prose li {
+  @apply mb-2;
+}

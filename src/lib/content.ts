@@ -21,17 +21,22 @@ function parseFrontmatter(content: string): { frontmatter: PageFrontmatter; body
     return { frontmatter: { title: "Untitled" }, body: content };
   }
   const [, yaml, body] = match;
-  const frontmatter: Record<string, string> = {};
+  const raw: Record<string, string> = {};
   yaml.split("\n").forEach((line) => {
     const colon = line.indexOf(":");
     if (colon > 0) {
       const key = line.slice(0, colon).trim();
       const value = line.slice(colon + 1).trim().replace(/^["']|["']$/g, "");
-      frontmatter[key] = value;
+      raw[key] = value;
     }
   });
+  const frontmatter: PageFrontmatter = {
+    title: raw.title ?? "Untitled",
+    tagline: raw.tagline,
+    hero_abstract: raw.hero_abstract,
+  };
   return {
-    frontmatter: frontmatter as PageFrontmatter,
+    frontmatter,
     body: body.trim(),
   };
 }

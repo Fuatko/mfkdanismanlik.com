@@ -1,4 +1,5 @@
-import { LucideIcon, ReactNode } from "react";
+import type { LucideIcon } from "lucide-react";
+import type { ReactNode } from "react";
 
 interface IconCardProps {
   icon: LucideIcon;

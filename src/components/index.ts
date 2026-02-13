@@ -7,3 +7,4 @@ export { CTABox } from "./CTABox";
 export { HeroPlaceholder } from "./HeroPlaceholder";
 export { FrameworkDiagram } from "./FrameworkDiagram";
 export { HealthCheck } from "./HealthCheck";
+export { LocaleHtml } from "./LocaleHtml";

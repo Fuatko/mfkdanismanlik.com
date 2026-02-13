@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Header, Footer } from "@/components";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -9,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Premium Management Consulting",
-  description: "Transform your organization with strategic expertise",
+  title: "MFK Danışmanlık | Premium Yönetim Danışmanlığı",
+  description: "Stratejik uzmanlıkla organizasyonunuzu dönüştürün",
 };
 
 export default function RootLayout({
@@ -19,12 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="min-h-screen antialiased">
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-      </body>
+    <html lang="tr" className={inter.variable}>
+      <body className="min-h-screen antialiased">{children}</body>
     </html>
   );
 }

@@ -1,0 +1,246 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "methodology": "Methodology",
+    "cases": "Cases",
+    "resources": "Resources",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Premium Management Consulting",
+    "tagline": "Transform your organization with strategic expertise",
+    "hero_abstract": "Strategic clarity. Operational excellence. Sustainable growth.",
+    "whyUs": "Why Partner With Us",
+    "approach": "Our Approach",
+    "ctaTitle": "Ready to Start?",
+    "ctaDesc": "Let's discuss how we can help you achieve your strategic objectives.",
+    "cards": {
+      "strategy": "Strategy",
+      "strategyDesc": "Clarify direction and align resources for growth.",
+      "operations": "Operations",
+      "operationsDesc": "Streamline processes and reduce waste.",
+      "transformation": "Transformation",
+      "transformationDesc": "Navigate change with minimal disruption.",
+      "people": "People",
+      "peopleDesc": "Build capability and strengthen culture."
+    },
+    "steps": {
+      "discover": "Discover",
+      "discoverDesc": "Understand your context, goals, and constraints.",
+      "diagnose": "Diagnose",
+      "diagnoseDesc": "Analyze data, map processes, identify root causes.",
+      "design": "Design",
+      "designDesc": "Develop recommendations and implementation roadmap.",
+      "deliver": "Deliver",
+      "deliverDesc": "Execute with your team, building capabilities.",
+      "sustain": "Sustain",
+      "sustainDesc": "Embed changes, measure outcomes, iterate."
+    }
+  },
+  "services": {
+    "title": "Services",
+    "tagline": "End-to-end consulting across strategy, operations, and people",
+    "serviceAreas": "Our Service Areas",
+    "framework": "Our Framework",
+    "frameworkBlocks": {
+      "diagnose": "Diagnose",
+      "diagnoseDesc": "Assess current state, identify gaps.",
+      "design": "Design",
+      "designDesc": "Develop target operating model.",
+      "implement": "Implement",
+      "implementDesc": "Execute with change management.",
+      "sustain": "Sustain",
+      "sustainDesc": "Embed capabilities and measure outcomes."
+    },
+    "strategy": "Strategy",
+    "strategyDesc": "Strategic planning, portfolio optimization, growth strategy.",
+    "operations": "Operations",
+    "operationsDesc": "Process improvement, supply chain, operational excellence.",
+    "transformation": "Transformation",
+    "transformationDesc": "Digital transformation, M&A integration, organizational change.",
+    "people": "People",
+    "peopleDesc": "Leadership development, talent strategy, culture transformation."
+  },
+  "methodology": {
+    "title": "Methodology",
+    "tagline": "A proven, repeatable approach to lasting impact",
+    "fiveStep": "Five-Step Process",
+    "toolbox": "Our Toolbox",
+    "steps": {
+      "discover": "Discover",
+      "discoverDesc": "Understand your context, goals, and constraints.",
+      "diagnose": "Diagnose",
+      "diagnoseDesc": "Analyze data, map processes, identify root causes.",
+      "design": "Design",
+      "designDesc": "Develop recommendations and implementation roadmap.",
+      "deliver": "Deliver",
+      "deliverDesc": "Execute with your team, building capabilities along the way.",
+      "sustain": "Sustain",
+      "sustainDesc": "Embed changes, measure outcomes, iterate as needed."
+    },
+    "tools": {
+      "valueStream": "Value Stream Mapping",
+      "scorecard": "Balanced Scorecard",
+      "stakeholder": "Stakeholder Analysis",
+      "facilitation": "Workshop Facilitation",
+      "metrics": "Process Metrics"
+    }
+  },
+  "cases": {
+    "title": "Case Studies",
+    "tagline": "Real results for organizations like yours",
+    "selected": "Selected Engagements",
+    "categories": {
+      "strategy": "Strategy & Growth",
+      "strategyDesc": "Strategic planning, market entry, portfolio optimization.",
+      "operations": "Operational Excellence",
+      "operationsDesc": "Process redesign, cost reduction, quality improvement.",
+      "digital": "Digital & Technology",
+      "digitalDesc": "Digital transformation, technology roadmap.",
+      "people": "People & Culture",
+      "peopleDesc": "Leadership development, culture change, talent strategy."
+    }
+  },
+  "resources": {
+    "title": "Resources",
+    "tagline": "Insights, frameworks, and practical guidance",
+    "hub": "Knowledge Hub",
+    "types": {
+      "articles": "Articles",
+      "articlesDesc": "Short reads on strategy, operations, and leadership.",
+      "whitepapers": "Whitepapers",
+      "whitepapersDesc": "Deep dives into specific topics and frameworks.",
+      "videos": "Videos",
+      "videosDesc": "Webinars and explainers.",
+      "tools": "Tools",
+      "toolsDesc": "Templates and self-assessment tools."
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "tagline": "Experienced consultants committed to your success",
+    "whoWeAre": "Who We Are",
+    "whoWeAreText": "We are a boutique management consulting firm focused on strategy, operations, and organizational effectiveness. Our team combines Big Four experience with hands-on industry expertise.",
+    "values": "Our Values",
+    "valuesList": {
+      "integrity": "Integrity",
+      "integrityDesc": "We provide honest advice, even when it's difficult.",
+      "excellence": "Excellence",
+      "excellenceDesc": "We bring the highest standards to every engagement.",
+      "collaboration": "Collaboration",
+      "collaborationDesc": "We work with your team, not just for them.",
+      "impact": "Impact",
+      "impactDesc": "We measure success by your outcomes, not our outputs."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "tagline": "Let's start a conversation",
+    "getInTouch": "Get in Touch",
+    "contactInfo": "Contact Information",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "expect": "What to Expect",
+    "expectText": "We typically respond within one business day. For urgent inquiries, please call directly.",
+    "sendMessage": "Send a Message",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "submit": "Send",
+    "sending": "Sending…",
+    "success": "Your message has been received. We will get back to you as soon as possible.",
+    "errorRequired": "Name, email and message are required."
+  },
+  "footer": {
+    "brand": "MFK Danışmanlık",
+    "brandDesc": "Premium management consulting for strategy, operations, and transformation.",
+    "navigation": "Navigation",
+    "rights": "All rights reserved."
+  },
+  "serviceDetail": {
+    "painPoints": "Common Pain Points",
+    "deliverables": "What You Get",
+    "approach": "Our Approach",
+    "ctaTitle": "Ready to Start?",
+    "steps": {
+      "discover": "Discover",
+      "discoverDesc": "Understand your context and goals.",
+      "diagnose": "Diagnose",
+      "diagnoseDesc": "Analyze gaps and root causes.",
+      "design": "Design",
+      "designDesc": "Develop recommendations and roadmap.",
+      "deliver": "Deliver",
+      "deliverDesc": "Execute with your team.",
+      "sustain": "Sustain",
+      "sustainDesc": "Embed changes and measure outcomes."
+    }
+  },
+  "strategy": {
+    "title": "Strategy Consulting",
+    "tagline": "Clarify direction. Accelerate growth.",
+    "painPoints": [
+      "Unclear priorities — Too many initiatives, limited focus",
+      "Slow decision-making — Analysis paralysis or reactive firefighting",
+      "Execution gaps — Great plans that never fully land"
+    ],
+    "deliverables": [
+      "Strategic plan with clear objectives and KPIs",
+      "Portfolio prioritization and resource allocation framework",
+      "Executive alignment workshops",
+      "Roadmap for implementation and governance"
+    ]
+  },
+  "operations": {
+    "title": "Operations Consulting",
+    "tagline": "Streamline processes. Reduce waste. Improve performance.",
+    "painPoints": [
+      "Inefficient processes — Red tape, rework, and bottlenecks",
+      "Rising costs — Operational spend growing faster than revenue",
+      "Quality issues — Defects, delays, and customer complaints"
+    ],
+    "deliverables": [
+      "Process maps and value stream analysis",
+      "Target operating model and improvement roadmap",
+      "Pilot implementation with your team",
+      "Metrics dashboard and governance model"
+    ]
+  },
+  "transformation": {
+    "title": "Transformation Consulting",
+    "tagline": "Navigate change. Embed new ways of working.",
+    "painPoints": [
+      "Resistance to change — People clinging to old ways",
+      "Scope creep — Projects that grow beyond original intent",
+      "Value leakage — Benefits that don't materialize post-go-live"
+    ],
+    "deliverables": [
+      "Change impact assessment and stakeholder map",
+      "Communications and training plan",
+      "Integration playbook (for M&A) or transformation roadmap",
+      "Post-implementation review and sustain plan"
+    ]
+  },
+  "people": {
+    "title": "People & Organization Consulting",
+    "tagline": "Build capability. Strengthen culture. Unlock potential.",
+    "painPoints": [
+      "Leadership gaps — Key roles without the right capabilities",
+      "Misaligned culture — Values on the wall don't match behavior",
+      "Talent attrition — Losing your best people to competitors"
+    ],
+    "deliverables": [
+      "Organization design and role clarity",
+      "Leadership development program design",
+      "Culture assessment and action plan",
+      "Talent and succession planning framework"
+    ]
+  },
+  "cta": {
+    "title": "Ready to Start?",
+    "desc": "Let's discuss how we can help you achieve your strategic objectives.",
+    "button": "Get in Touch"
+  }
+}

@@ -3,7 +3,38 @@
 import { useState } from "react";
 import { Send } from "lucide-react";
 
-export function ContactForm() {
+interface ContactFormTranslations {
+  nameLabel?: string;
+  emailLabel?: string;
+  messageLabel?: string;
+  namePlaceholder?: string;
+  emailPlaceholder?: string;
+  messagePlaceholder?: string;
+  submit?: string;
+  sending?: string;
+  success?: string;
+  errorRequired?: string;
+}
+
+const defaults: ContactFormTranslations = {
+  nameLabel: "Ad Soyad",
+  emailLabel: "E-posta",
+  messageLabel: "Mesaj",
+  namePlaceholder: "Adınız Soyadınız",
+  emailPlaceholder: "ornek@firma.com",
+  messagePlaceholder: "Nasıl yardımcı olabiliriz?",
+  submit: "Gönder",
+  sending: "Gönderiliyor…",
+  success: "Mesajınız alındı. En kısa sürede size dönüş yapacağız.",
+  errorRequired: "Ad, e-posta ve mesaj alanları zorunludur.",
+};
+
+interface ContactFormProps {
+  translations?: ContactFormTranslations;
+}
+
+export function ContactForm({ translations: t = {} }: ContactFormProps) {
+  const txt = { ...defaults, ...t };
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -17,7 +48,7 @@ export function ContactForm() {
 
     if (!name || !email || !message) {
       setStatus("error");
-      setErrorMsg("Ad, e-posta ve mesaj alanları zorunludur.");
+      setErrorMsg(txt.errorRequired ?? "");
       return;
     }
 
@@ -37,11 +68,11 @@ export function ContactForm() {
         form.reset();
       } else {
         setStatus("error");
-        setErrorMsg(data.error || "Gönderilemedi. Lütfen tekrar deneyin.");
+        setErrorMsg(data.error ?? "");
       }
     } catch {
       setStatus("error");
-      setErrorMsg("Bağlantı hatası. Lütfen tekrar deneyin.");
+      setErrorMsg("");
     }
   }
 
@@ -49,7 +80,7 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <label htmlFor="name" className="mb-2 block text-sm font-medium text-zinc-700">
-          Ad Soyad
+          {txt.nameLabel}
         </label>
         <input
           id="name"
@@ -58,12 +89,12 @@ export function ContactForm() {
           required
           disabled={status === "loading"}
           className="w-full rounded-lg border border-zinc-200 px-4 py-3 text-sm focus:border-zinc-900 focus:outline-none focus:ring-1 focus:ring-zinc-900 disabled:opacity-60"
-          placeholder="Adınız Soyadınız"
+          placeholder={txt.namePlaceholder}
         />
       </div>
       <div>
         <label htmlFor="email" className="mb-2 block text-sm font-medium text-zinc-700">
-          E-posta
+          {txt.emailLabel}
         </label>
         <input
           id="email"
@@ -72,12 +103,12 @@ export function ContactForm() {
           required
           disabled={status === "loading"}
           className="w-full rounded-lg border border-zinc-200 px-4 py-3 text-sm focus:border-zinc-900 focus:outline-none focus:ring-1 focus:ring-zinc-900 disabled:opacity-60"
-          placeholder="ornek@firma.com"
+          placeholder={txt.emailPlaceholder}
         />
       </div>
       <div>
         <label htmlFor="message" className="mb-2 block text-sm font-medium text-zinc-700">
-          Mesaj
+          {txt.messageLabel}
         </label>
         <textarea
           id="message"
@@ -86,13 +117,13 @@ export function ContactForm() {
           required
           disabled={status === "loading"}
           className="w-full rounded-lg border border-zinc-200 px-4 py-3 text-sm focus:border-zinc-900 focus:outline-none focus:ring-1 focus:ring-zinc-900 disabled:opacity-60"
-          placeholder="Nasıl yardımcı olabiliriz?"
+          placeholder={txt.messagePlaceholder}
         />
       </div>
 
       {status === "success" && (
         <p className="rounded-lg bg-emerald-50 p-3 text-sm text-emerald-700">
-          Mesajınız alındı. En kısa sürede size dönüş yapacağız.
+          {txt.success}
         </p>
       )}
       {status === "error" && errorMsg && (
@@ -104,7 +135,7 @@ export function ContactForm() {
         disabled={status === "loading"}
         className="inline-flex items-center gap-2 rounded-lg bg-zinc-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-zinc-800 disabled:opacity-60"
       >
-        {status === "loading" ? "Gönderiliyor…" : "Gönder"}
+        {status === "loading" ? txt.sending : txt.submit}
         <Send size={16} />
       </button>
     </form>

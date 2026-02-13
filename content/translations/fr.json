@@ -1,0 +1,246 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "methodology": "Méthodologie",
+    "cases": "Références",
+    "resources": "Ressources",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Conseil en Management Premium",
+    "tagline": "Transformez votre organisation grâce à notre expertise stratégique",
+    "hero_abstract": "Clarté stratégique. Excellence opérationnelle. Croissance durable.",
+    "whyUs": "Pourquoi nous faire confiance ?",
+    "approach": "Notre approche",
+    "ctaTitle": "Prêt à commencer ?",
+    "ctaDesc": "Discutons de la manière dont nous pouvons vous aider à atteindre vos objectifs stratégiques.",
+    "cards": {
+      "strategy": "Stratégie",
+      "strategyDesc": "Clarifiez la direction et alignez les ressources pour la croissance.",
+      "operations": "Opérations",
+      "operationsDesc": "Optimisez les processus et réduisez le gaspillage.",
+      "transformation": "Transformation",
+      "transformationDesc": "Pilotez le changement avec un minimum de perturbation.",
+      "people": "Personnes",
+      "peopleDesc": "Développez les capacités et renforcez la culture."
+    },
+    "steps": {
+      "discover": "Découvrir",
+      "discoverDesc": "Comprenez votre contexte, objectifs et contraintes.",
+      "diagnose": "Diagnostiquer",
+      "diagnoseDesc": "Analysez les données, cartographiez les processus, identifiez les causes racines.",
+      "design": "Concevoir",
+      "designDesc": "Développez des recommandations et une feuille de route.",
+      "deliver": "Livrer",
+      "deliverDesc": "Exécutez avec votre équipe, développez les capacités.",
+      "sustain": "Soutenir",
+      "sustainDesc": "Ancrez les changements, mesurez les résultats, itérez."
+    }
+  },
+  "services": {
+    "title": "Services",
+    "tagline": "Conseil de bout en bout en stratégie, opérations et ressources humaines",
+    "serviceAreas": "Nos domaines de service",
+    "framework": "Notre cadre",
+    "frameworkBlocks": {
+      "diagnose": "Diagnostiquer",
+      "diagnoseDesc": "Évaluez l'état actuel, identifiez les écarts.",
+      "design": "Concevoir",
+      "designDesc": "Développez le modèle opérationnel cible.",
+      "implement": "Implémenter",
+      "implementDesc": "Exécutez avec gestion du changement.",
+      "sustain": "Soutenir",
+      "sustainDesc": "Ancrez les capacités et mesurez les résultats."
+    },
+    "strategy": "Stratégie",
+    "strategyDesc": "Planification stratégique, optimisation de portefeuille, stratégie de croissance.",
+    "operations": "Opérations",
+    "operationsDesc": "Amélioration des processus, chaîne d'approvisionnement, excellence opérationnelle.",
+    "transformation": "Transformation",
+    "transformationDesc": "Transformation digitale, intégration M&A, changement organisationnel.",
+    "people": "Personnes",
+    "peopleDesc": "Développement du leadership, stratégie talents, transformation culturelle."
+  },
+  "methodology": {
+    "title": "Méthodologie",
+    "tagline": "Une approche éprouvée et reproductible pour un impact durable",
+    "fiveStep": "Processus en cinq étapes",
+    "toolbox": "Notre boîte à outils",
+    "steps": {
+      "discover": "Découvrir",
+      "discoverDesc": "Comprenez votre contexte, objectifs et contraintes.",
+      "diagnose": "Diagnostiquer",
+      "diagnoseDesc": "Analysez les données, cartographiez les processus, identifiez les causes racines.",
+      "design": "Concevoir",
+      "designDesc": "Développez des recommandations et une feuille de route.",
+      "deliver": "Livrer",
+      "deliverDesc": "Exécutez avec votre équipe, développez les capacités.",
+      "sustain": "Soutenir",
+      "sustainDesc": "Ancrez les changements, mesurez les résultats, itérez si nécessaire."
+    },
+    "tools": {
+      "valueStream": "Cartographie du flux de valeur",
+      "scorecard": "Tableau de bord équilibré",
+      "stakeholder": "Analyse des parties prenantes",
+      "facilitation": "Facilitation d'ateliers",
+      "metrics": "Métriques de processus"
+    }
+  },
+  "cases": {
+    "title": "Études de cas",
+    "tagline": "Des résultats concrets pour des organisations comme la vôtre",
+    "selected": "Projets sélectionnés",
+    "categories": {
+      "strategy": "Stratégie et croissance",
+      "strategyDesc": "Planification stratégique, entrée sur le marché, optimisation de portefeuille.",
+      "operations": "Excellence opérationnelle",
+      "operationsDesc": "Refonte des processus, réduction des coûts, amélioration de la qualité.",
+      "digital": "Numérique et technologie",
+      "digitalDesc": "Transformation digitale, feuille de route technologique.",
+      "people": "Personnes et culture",
+      "peopleDesc": "Développement du leadership, changement culturel, stratégie talents."
+    }
+  },
+  "resources": {
+    "title": "Ressources",
+    "tagline": "Insights, cadres et conseils pratiques",
+    "hub": "Centre de connaissances",
+    "types": {
+      "articles": "Articles",
+      "articlesDesc": "Lectures courtes sur la stratégie, les opérations et le leadership.",
+      "whitepapers": "Livres blancs",
+      "whitepapersDesc": "Analyses approfondies sur des sujets et cadres spécifiques.",
+      "videos": "Vidéos",
+      "videosDesc": "Webinaires et explicateurs.",
+      "tools": "Outils",
+      "toolsDesc": "Modèles et outils d'auto-évaluation."
+    }
+  },
+  "about": {
+    "title": "À propos",
+    "tagline": "Des consultants expérimentés engagés dans votre succès",
+    "whoWeAre": "Qui sommes-nous",
+    "whoWeAreText": "Nous sommes un cabinet de conseil en management spécialisé dans la stratégie, les opérations et l'efficacité organisationnelle. Notre équipe combine l'expérience Big Four avec une expertise terrain sectorielle.",
+    "values": "Nos valeurs",
+    "valuesList": {
+      "integrity": "Intégrité",
+      "integrityDesc": "Nous offrons des conseils honnêtes, même quand c'est difficile.",
+      "excellence": "Excellence",
+      "excellenceDesc": "Nous apportons les plus hauts standards à chaque mission.",
+      "collaboration": "Collaboration",
+      "collaborationDesc": "Nous travaillons avec votre équipe, pas seulement pour elle.",
+      "impact": "Impact",
+      "impactDesc": "Nous mesurons le succès par vos résultats, pas les nôtres."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "tagline": "Entamons une conversation",
+    "getInTouch": "Nous contacter",
+    "contactInfo": "Coordonnées",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "address": "Adresse",
+    "expect": "Délai de réponse",
+    "expectText": "Nous répondons généralement sous un jour ouvré. Pour les demandes urgentes, appelez directement.",
+    "sendMessage": "Envoyer un message",
+    "nameLabel": "Nom",
+    "emailLabel": "E-mail",
+    "messageLabel": "Message",
+    "submit": "Envoyer",
+    "sending": "Envoi en cours…",
+    "success": "Votre message a bien été reçu. Nous vous répondrons dans les plus brefs délais.",
+    "errorRequired": "Le nom, l'e-mail et le message sont obligatoires."
+  },
+  "footer": {
+    "brand": "MFK Danışmanlık",
+    "brandDesc": "Conseil en management premium pour la stratégie, les opérations et la transformation.",
+    "navigation": "Navigation",
+    "rights": "Tous droits réservés."
+  },
+  "serviceDetail": {
+    "painPoints": "Points de douleur courants",
+    "deliverables": "Ce que vous obtenez",
+    "approach": "Notre approche",
+    "ctaTitle": "Prêt à commencer ?",
+    "steps": {
+      "discover": "Découvrir",
+      "discoverDesc": "Comprenez votre contexte et objectifs.",
+      "diagnose": "Diagnostiquer",
+      "diagnoseDesc": "Analysez les écarts et causes racines.",
+      "design": "Concevoir",
+      "designDesc": "Développez recommandations et feuille de route.",
+      "deliver": "Livrer",
+      "deliverDesc": "Exécutez avec votre équipe.",
+      "sustain": "Soutenir",
+      "sustainDesc": "Ancrez les changements et mesurez les résultats."
+    }
+  },
+  "strategy": {
+    "title": "Conseil en stratégie",
+    "tagline": "Clarifiez la direction. Accélérez la croissance.",
+    "painPoints": [
+      "Priorités floues — Trop d'initiatives, peu de focus",
+      "Décisions lentes — Paralysie par l'analyse ou réactivité",
+      "Lacunes d'exécution — De bons plans jamais pleinement mis en œuvre"
+    ],
+    "deliverables": [
+      "Plan stratégique avec objectifs et KPI clairs",
+      "Cadre de priorisation de portefeuille et d'allocation des ressources",
+      "Ateliers d'alignement dirigeants",
+      "Feuille de route d'implémentation et de gouvernance"
+    ]
+  },
+  "operations": {
+    "title": "Conseil en opérations",
+    "tagline": "Optimisez les processus. Réduisez le gaspillage. Améliorez les performances.",
+    "painPoints": [
+      "Processus inefficaces — Paperasserie, retravail, goulots d'étranglement",
+      "Coûts en hausse — Dépenses opérationnelles croissant plus vite que les revenus",
+      "Problèmes de qualité — Défauts, retards, plaintes clients"
+    ],
+    "deliverables": [
+      "Cartographie des processus et analyse du flux de valeur",
+      "Modèle opérationnel cible et feuille de route d'amélioration",
+      "Implémentation pilote avec votre équipe",
+      "Tableau de bord métriques et modèle de gouvernance"
+    ]
+  },
+  "transformation": {
+    "title": "Conseil en transformation",
+    "tagline": "Pilotez le changement. Ancrez les nouvelles façons de travailler.",
+    "painPoints": [
+      "Résistance au changement — Les gens s'accrochent aux anciennes méthodes",
+      "Dérive de périmètre — Des projets qui dépassent l'intention initiale",
+      "Fuites de valeur — Des bénéfices qui ne se concrétisent pas après le go-live"
+    ],
+    "deliverables": [
+      "Évaluation d'impact du changement et carte des parties prenantes",
+      "Plan de communication et de formation",
+      "Guide d'intégration (M&A) ou feuille de route de transformation",
+      "Revue post-implémentation et plan de soutien"
+    ]
+  },
+  "people": {
+    "title": "Conseil en personnes et organisation",
+    "tagline": "Développez les capacités. Renforcez la culture. Libérez le potentiel.",
+    "painPoints": [
+      "Lacunes en leadership — Des rôles clés sans les bonnes capacités",
+      "Culture incohérente — Les valeurs affichées ne correspondent pas aux comportements",
+      "Attrition des talents — Vous perdez vos meilleurs éléments au profit de la concurrence"
+    ],
+    "deliverables": [
+      "Conception organisationnelle et clarté des rôles",
+      "Conception de programme de développement du leadership",
+      "Évaluation de la culture et plan d'action",
+      "Cadre de planification des talents et de la succession"
+    ]
+  },
+  "cta": {
+    "title": "Prêt à commencer ?",
+    "desc": "Discutons de la manière dont nous pouvons vous aider à atteindre vos objectifs stratégiques.",
+    "button": "Nous contacter"
+  }
+}

@@ -6,46 +6,55 @@ import {
   BarChart3,
 } from "lucide-react";
 import { Section, Stepper, CTABox } from "@/components";
-import { getPageContent } from "@/lib/content";
+import { getTranslations } from "@/lib/i18n";
 
-const STEPS = [
-  { title: "Discover", description: "Understand your context, goals, and constraints." },
-  { title: "Diagnose", description: "Analyze data, map processes, identify root causes." },
-  { title: "Design", description: "Develop recommendations and implementation roadmap." },
-  { title: "Deliver", description: "Execute with your team, building capabilities along the way." },
-  { title: "Sustain", description: "Embed changes, measure outcomes, iterate as needed." },
-];
+export default async function MethodologyPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = getTranslations(locale as "tr" | "en" | "fr");
+  const m = t.methodology as Record<string, unknown>;
+  const steps = (m?.steps as Record<string, string>) ?? {};
+  const tools = (m?.tools as Record<string, string>) ?? {};
+  const cta = t.cta as Record<string, string>;
 
-const TOOLBOX_ICONS = [
-  { icon: Wrench, label: "Value Stream Mapping" },
-  { icon: Ruler, label: "Balanced Scorecard" },
-  { icon: Target, label: "Stakeholder Analysis" },
-  { icon: MessageSquare, label: "Workshop Facilitation" },
-  { icon: BarChart3, label: "Process Metrics" },
-];
+  const STEPS = [
+    { title: steps.discover, description: steps.discoverDesc },
+    { title: steps.diagnose, description: steps.diagnoseDesc },
+    { title: steps.design, description: steps.designDesc },
+    { title: steps.deliver, description: steps.deliverDesc },
+    { title: steps.sustain, description: steps.sustainDesc },
+  ];
 
-export default function MethodologyPage() {
-  const content = getPageContent("methodology");
+  const TOOLBOX_ICONS = [
+    { icon: Wrench, label: tools.valueStream },
+    { icon: Ruler, label: tools.scorecard },
+    { icon: Target, label: tools.stakeholder },
+    { icon: MessageSquare, label: tools.facilitation },
+    { icon: BarChart3, label: tools.metrics },
+  ];
 
   return (
     <>
       <Section>
         <h1 className="mb-4 text-3xl font-semibold text-zinc-900 md:text-4xl">
-          {content?.frontmatter.title ?? "Methodology"}
+          {(m?.title as string) ?? "Methodology"}
         </h1>
         <p className="mb-12 max-w-2xl text-lg text-zinc-600">
-          {content?.frontmatter.tagline}
+          {(m?.tagline as string) ?? ""}
         </p>
 
         <h2 className="mb-10 text-xl font-semibold text-zinc-900 md:text-2xl">
-          Five-Step Process
+          {(m?.fiveStep as string) ?? ""}
         </h2>
         <Stepper steps={STEPS} />
       </Section>
 
       <Section className="bg-zinc-50/30">
         <h2 className="mb-8 text-xl font-semibold text-zinc-900 md:text-2xl">
-          Our Toolbox
+          {(m?.toolbox as string) ?? ""}
         </h2>
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {TOOLBOX_ICONS.map(({ icon: Icon, label }) => (
@@ -63,7 +72,7 @@ export default function MethodologyPage() {
       </Section>
 
       <Section>
-        <CTABox />
+        <CTABox href={`/${locale}/contact`} label={cta?.button} />
       </Section>
     </>
   );

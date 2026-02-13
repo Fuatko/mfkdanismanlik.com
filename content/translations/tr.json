@@ -1,0 +1,246 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetler",
+    "methodology": "Metodoloji",
+    "cases": "Referanslar",
+    "resources": "Kaynaklar",
+    "about": "Hakkımızda",
+    "contact": "İletişim"
+  },
+  "home": {
+    "title": "Premium Yönetim Danışmanlığı",
+    "tagline": "Stratejik uzmanlıkla organizasyonunuzu dönüştürün",
+    "hero_abstract": "Stratejik netlik. Operasyonel mükemmellik. Sürdürülebilir büyüme.",
+    "whyUs": "Neden Bizimle Çalışmalısınız?",
+    "approach": "Yaklaşımımız",
+    "ctaTitle": "Başlamaya Hazır mısınız?",
+    "ctaDesc": "Stratejik hedeflerinize ulaşmanıza nasıl yardımcı olabileceğimizi konuşalım.",
+    "cards": {
+      "strategy": "Strateji",
+      "strategyDesc": "Yönü netleştirin, büyüme için kaynakları hizalayın.",
+      "operations": "Operasyonlar",
+      "operationsDesc": "Süreçleri optimize edin, israfı azaltın.",
+      "transformation": "Dönüşüm",
+      "transformationDesc": "Minimum aksama ile değişimi yönetin.",
+      "people": "İnsan",
+      "peopleDesc": "Yetkinlik oluşturun, kültürü güçlendirin."
+    },
+    "steps": {
+      "discover": "Keşfet",
+      "discoverDesc": "Bağlamınızı, hedeflerinizi ve kısıtlamalarınızı anlayın.",
+      "diagnose": "Teşhis",
+      "diagnoseDesc": "Verileri analiz edin, süreçleri eşleştirin, kök nedenleri belirleyin.",
+      "design": "Tasarım",
+      "designDesc": "Öneriler ve uygulama yol haritası geliştirin.",
+      "deliver": "Teslim",
+      "deliverDesc": "Ekibinizle birlikte çalışın, yetkinlikleri inşa edin.",
+      "sustain": "Sürdür",
+      "sustainDesc": "Değişiklikleri yerleştirin, sonuçları ölçün, yineleyin."
+    }
+  },
+  "services": {
+    "title": "Hizmetler",
+    "tagline": "Strateji, operasyonlar ve insan odaklı uçtan uca danışmanlık",
+    "serviceAreas": "Hizmet Alanlarımız",
+    "framework": "Çerçevemiz",
+    "frameworkBlocks": {
+      "diagnose": "Teşhis",
+      "diagnoseDesc": "Mevcut durumu değerlendirin, boşlukları belirleyin.",
+      "design": "Tasarım",
+      "designDesc": "Hedef operasyonel model geliştirin.",
+      "implement": "Uygulama",
+      "implementDesc": "Değişim yönetimi ile hayata geçirin.",
+      "sustain": "Sürdürme",
+      "sustainDesc": "Yetkinlikleri yerleştirin, sonuçları ölçün."
+    },
+    "strategy": "Strateji",
+    "strategyDesc": "Stratejik planlama, portföy optimizasyonu, büyüme stratejisi.",
+    "operations": "Operasyonlar",
+    "operationsDesc": "Süreç iyileştirme, tedarik zinciri, operasyonel mükemmellik.",
+    "transformation": "Dönüşüm",
+    "transformationDesc": "Dijital dönüşüm, M&A entegrasyonu, organizasyonel değişim.",
+    "people": "İnsan",
+    "peopleDesc": "Liderlik geliştirme, yetenek stratejisi, kültür dönüşümü."
+  },
+  "methodology": {
+    "title": "Metodoloji",
+    "tagline": "Kalıcı etki için kanıtlanmış, tekrarlanabilir yaklaşım",
+    "fiveStep": "Beş Adımlı Süreç",
+    "toolbox": "Araç Kutumuz",
+    "steps": {
+      "discover": "Keşfet",
+      "discoverDesc": "Bağlamınızı, hedeflerinizi ve kısıtlamalarınızı anlayın.",
+      "diagnose": "Teşhis",
+      "diagnoseDesc": "Verileri analiz edin, süreçleri eşleştirin, kök nedenleri belirleyin.",
+      "design": "Tasarım",
+      "designDesc": "Öneriler ve uygulama yol haritası geliştirin.",
+      "deliver": "Teslim",
+      "deliverDesc": "Ekibinizle birlikte çalışın, yetkinlikleri inşa edin.",
+      "sustain": "Sürdür",
+      "sustainDesc": "Değişiklikleri yerleştirin, sonuçları ölçün, gerektiğinde yineleyin."
+    },
+    "tools": {
+      "valueStream": "Değer Akışı Haritalama",
+      "scorecard": "Dengeli Skor Kartı",
+      "stakeholder": "Paydaş Analizi",
+      "facilitation": "Atölye Kolaylaştırma",
+      "metrics": "Süreç Metrikleri"
+    }
+  },
+  "cases": {
+    "title": "Referanslar",
+    "tagline": "Sizin gibi organizasyonlar için gerçek sonuçlar",
+    "selected": "Seçilmiş Projeler",
+    "categories": {
+      "strategy": "Strateji ve Büyüme",
+      "strategyDesc": "Stratejik planlama, pazar girişi, portföy optimizasyonu.",
+      "operations": "Operasyonel Mükemmellik",
+      "operationsDesc": "Süreç yeniden tasarımı, maliyet azaltma, kalite iyileştirme.",
+      "digital": "Dijital ve Teknoloji",
+      "digitalDesc": "Dijital dönüşüm, teknoloji yol haritası.",
+      "people": "İnsan ve Kültür",
+      "peopleDesc": "Liderlik geliştirme, kültür değişimi, yetenek stratejisi."
+    }
+  },
+  "resources": {
+    "title": "Kaynaklar",
+    "tagline": "İçgörüler, çerçeveler ve pratik rehberlik",
+    "hub": "Bilgi Merkezi",
+    "types": {
+      "articles": "Makaleler",
+      "articlesDesc": "Strateji, operasyonlar ve liderlik üzerine kısa okumalar.",
+      "whitepapers": "Beyaz Kitaplar",
+      "whitepapersDesc": "Belirli konular ve çerçeveler üzerine derinlemesine analizler.",
+      "videos": "Videolar",
+      "videosDesc": "Web seminerleri ve açıklayıcılar.",
+      "tools": "Araçlar",
+      "toolsDesc": "Şablonlar ve öz değerlendirme araçları."
+    }
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "tagline": "Başarınıza adanmış deneyimli danışmanlar",
+    "whoWeAre": "Biz Kimiz",
+    "whoWeAreText": "Strateji, operasyonlar ve organizasyonel etkinlik odaklı bir butik yönetim danışmanlığı firmasıyız. Ekibimiz Big Four deneyimini sahada endüstri uzmanlığıyla birleştirir.",
+    "values": "Değerlerimiz",
+    "valuesList": {
+      "integrity": "Dürüstlük",
+      "integrityDesc": "Zor olsa bile dürüst tavsiye sunarız.",
+      "excellence": "Mükemmellik",
+      "excellenceDesc": "Her projede en yüksek standartları getiririz.",
+      "collaboration": "İşbirliği",
+      "collaborationDesc": "Ekibinizle birlikte çalışırız, sadece onlar için değil.",
+      "impact": "Etki",
+      "impactDesc": "Başarıyı sizin sonuçlarınıza göre ölçeriz."
+    }
+  },
+  "contact": {
+    "title": "İletişim",
+    "tagline": "Bir sohbet başlatalım",
+    "getInTouch": "Bize Ulaşın",
+    "contactInfo": "İletişim Bilgileri",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "address": "Adres",
+    "expect": "Beklenen Süre",
+    "expectText": "Genellikle bir iş günü içinde yanıt veriyoruz. Acil sorular için lütfen doğrudan arayın.",
+    "sendMessage": "Mesaj Gönderin",
+    "nameLabel": "Ad Soyad",
+    "emailLabel": "E-posta",
+    "messageLabel": "Mesaj",
+    "submit": "Gönder",
+    "sending": "Gönderiliyor…",
+    "success": "Mesajınız alındı. En kısa sürede size dönüş yapacağız.",
+    "errorRequired": "Ad, e-posta ve mesaj alanları zorunludur."
+  },
+  "footer": {
+    "brand": "MFK Danışmanlık",
+    "brandDesc": "Strateji, operasyonlar ve dönüşüm için premium yönetim danışmanlığı.",
+    "navigation": "Navigasyon",
+    "rights": "Tüm hakları saklıdır."
+  },
+  "serviceDetail": {
+    "painPoints": "Yaygın Zorluklar",
+    "deliverables": "Ne Sunuyoruz?",
+    "approach": "Yaklaşımımız",
+    "ctaTitle": "Başlamaya Hazır mısınız?",
+    "steps": {
+      "discover": "Keşfet",
+      "discoverDesc": "Bağlamınızı ve hedeflerinizi anlayın.",
+      "diagnose": "Teşhis",
+      "diagnoseDesc": "Boşlukları ve kök nedenleri analiz edin.",
+      "design": "Tasarım",
+      "designDesc": "Öneriler ve yol haritası geliştirin.",
+      "deliver": "Teslim",
+      "deliverDesc": "Ekibinizle birlikte hayata geçirin.",
+      "sustain": "Sürdür",
+      "sustainDesc": "Değişiklikleri yerleştirin ve sonuçları ölçün."
+    }
+  },
+  "strategy": {
+    "title": "Strateji Danışmanlığı",
+    "tagline": "Yönü netleştirin. Büyümeyi hızlandırın.",
+    "painPoints": [
+      "Belirsiz öncelikler — Çok fazla girişim, sınırlı odak",
+      "Yavaş karar alma — Analiz felci veya tepkisel yangın söndürme",
+      "Uygulama boşlukları — Tam hayata geçmeyen harika planlar"
+    ],
+    "deliverables": [
+      "Net hedefler ve KPI'larla stratejik plan",
+      "Portföy önceliklendirme ve kaynak tahsisi çerçevesi",
+      "Üst yönetim hizalama atölyeleri",
+      "Uygulama ve yönetişim için yol haritası"
+    ]
+  },
+  "operations": {
+    "title": "Operasyon Danışmanlığı",
+    "tagline": "Süreçleri optimize edin. İsrafı azaltın. Performansı artırın.",
+    "painPoints": [
+      "Verimsiz süreçler — Bürokrasi, yeniden iş, darboğazlar",
+      "Yükselen maliyetler — Operasyonel harcamalar gelirden hızlı büyüyor",
+      "Kalite sorunları — Hatalar, gecikmeler, müşteri şikayetleri"
+    ],
+    "deliverables": [
+      "Süreç haritaları ve değer akışı analizi",
+      "Hedef operasyonel model ve iyileştirme yol haritası",
+      "Ekibinizle pilot uygulama",
+      "Metrik paneli ve yönetişim modeli"
+    ]
+  },
+  "transformation": {
+    "title": "Dönüşüm Danışmanlığı",
+    "tagline": "Değişimi yönetin. Yeni çalışma biçimlerini yerleştirin.",
+    "painPoints": [
+      "Değişime direnç — İnsanlar eski yöntemlere tutunuyor",
+      "Kapsam genişlemesi — Orijinal niyetin ötesine büyüyen projeler",
+      "Değer kaybı — Go-live sonrası gerçekleşmeyen faydalar"
+    ],
+    "deliverables": [
+      "Değişim etki değerlendirmesi ve paydaş haritası",
+      "İletişim ve eğitim planı",
+      "Entegrasyon oynak defteri (M&A için) veya dönüşüm yol haritası",
+      "Uygulama sonrası inceleme ve sürdürme planı"
+    ]
+  },
+  "people": {
+    "title": "İnsan ve Organizasyon Danışmanlığı",
+    "tagline": "Yetkinlik oluşturun. Kültürü güçlendirin. Potansiyeli açığa çıkarın.",
+    "painPoints": [
+      "Liderlik boşlukları — Kritik rollerde doğru yetkinlikler yok",
+      "Uyumsuz kültür — Duvardaki değerler davranışla örtüşmüyor",
+      "Yetenek kaybı — En iyi insanlarınızı rakiplere kaptırıyorsunuz"
+    ],
+    "deliverables": [
+      "Organizasyon tasarımı ve rol netliği",
+      "Liderlik geliştirme programı tasarımı",
+      "Kültür değerlendirmesi ve eylem planı",
+      "Yetenek ve halef planlama çerçevesi"
+    ]
+  },
+  "cta": {
+    "title": "Başlamaya Hazır mısınız?",
+    "desc": "Stratejik hedeflerinize ulaşmanıza nasıl yardımcı olabileceğimizi konuşalım.",
+    "button": "İletişime Geçin"
+  }
+}

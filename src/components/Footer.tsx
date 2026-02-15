@@ -30,7 +30,15 @@ export function Footer({ locale, translations }: FooterProps) {
   const emailValue = contact.emailValue ?? "";
   const phoneValue = contact.phoneValue ?? "";
   const addressValue = contact.addressValue ?? "";
-  const mapsUrl = contact.mapsUrl ?? "";
+  const mapsUrl = (contact.mapsUrl ?? "").trim();
+  // İkinci sütun başlığı: "Adres" veya link yazılmışsa "Navigasyon" göster
+  const navLabel =
+    footer.navigation && footer.navigation !== "Adres" && !footer.navigation.startsWith("http")
+      ? footer.navigation
+      : "Navigasyon";
+  // Adres tıklanınca: mapsUrl varsa onu kullan, yoksa Google Maps arama
+  const addressHref =
+    mapsUrl || (addressValue ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addressValue)}` : "");
 
   return (
     <footer className="border-t border-zinc-200/80 bg-zinc-50/50">
@@ -44,7 +52,7 @@ export function Footer({ locale, translations }: FooterProps) {
           </div>
           <div>
             <p className="mb-4 text-sm font-semibold text-zinc-900">
-              {footer.navigation ?? "Navigasyon"}
+              {navLabel}
             </p>
             <ul className="space-y-2">
               {links.map((item) => (
@@ -83,9 +91,9 @@ export function Footer({ locale, translations }: FooterProps) {
               {addressValue && (
                 <li className="flex items-center gap-2">
                   <MapPin size={14} className="shrink-0" />
-                  {mapsUrl ? (
+                  {addressHref ? (
                     <a
-                      href={mapsUrl}
+                      href={addressHref}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-zinc-900 hover:underline"

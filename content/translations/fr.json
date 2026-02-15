@@ -1,4 +1,8 @@
 {
+  "images": {
+    "hero": "",
+    "aboutTeam": ""
+  },
   "nav": {
     "home": "Accueil",
     "services": "Services",

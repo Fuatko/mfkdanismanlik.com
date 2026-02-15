@@ -14,7 +14,7 @@ export default async function ServicesPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = getTranslations(locale as "tr" | "en" | "fr");
+  const t = await getTranslations(locale as "tr" | "en" | "fr");
   const srv = t.services as Record<string, unknown>;
   const blocks = (srv?.frameworkBlocks as Record<string, string>) ?? {};
   const cta = t.cta as Record<string, string>;

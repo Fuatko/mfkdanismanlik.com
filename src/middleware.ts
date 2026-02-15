@@ -5,6 +5,11 @@ import { defaultLocale, isValidLocale } from "./lib/i18n-constants";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // İçerik paneli: locale kontrolü yapma, doğrudan geçir
+  if (pathname.startsWith("/admin") || pathname.startsWith("/panel")) {
+    return NextResponse.next();
+  }
+
   // Root: redirect to Turkish (default locale)
   if (pathname === "/") {
     return NextResponse.redirect(new URL("/tr", request.url));
@@ -21,5 +26,6 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  // api, panel, admin, static dosyalar ve favicon için middleware çalışmasın
+  matcher: ["/((?!api|panel|admin|_next/static|_next/image|favicon.ico).*)"],
 };

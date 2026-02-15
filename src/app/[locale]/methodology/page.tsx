@@ -14,7 +14,7 @@ export default async function MethodologyPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = getTranslations(locale as "tr" | "en" | "fr");
+  const t = await getTranslations(locale as "tr" | "en" | "fr");
   const m = t.methodology as Record<string, unknown>;
   const steps = (m?.steps as Record<string, string>) ?? {};
   const tools = (m?.tools as Record<string, string>) ?? {};

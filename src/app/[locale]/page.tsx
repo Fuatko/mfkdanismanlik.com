@@ -14,7 +14,7 @@ export default async function HomePage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = getTranslations(locale as "tr" | "en" | "fr");
+  const t = await getTranslations(locale as "tr" | "en" | "fr");
   const home = t.home as Record<string, unknown>;
   const cards = (home?.cards as Record<string, string>) ?? {};
   const steps = (home?.steps as Record<string, string>) ?? {};
@@ -43,6 +43,8 @@ export default async function HomePage({
           tagline={(home?.tagline as string) ?? ""}
           abstract={(home?.hero_abstract as string) ?? ""}
           size="full"
+          imageUrl={((t as Record<string, unknown>).images as Record<string, string>)?.hero || undefined}
+          imageAlt="MFK Danışmanlık"
         />
       </Section>
 

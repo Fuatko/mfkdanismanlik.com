@@ -9,7 +9,7 @@ export default async function ContactPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = getTranslations(locale as "tr" | "en" | "fr");
+  const t = await getTranslations(locale as "tr" | "en" | "fr");
   const c = t.contact as Record<string, string>;
   const contactTranslations = {
     nameLabel: c?.nameLabel,

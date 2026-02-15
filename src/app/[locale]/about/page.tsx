@@ -8,7 +8,7 @@ export default async function AboutPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = getTranslations(locale as "tr" | "en" | "fr");
+  const t = await getTranslations(locale as "tr" | "en" | "fr");
   const a = t.about as Record<string, unknown>;
   const vals = (a?.valuesList as Record<string, string>) ?? {};
   const cta = t.cta as Record<string, string>;

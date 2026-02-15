@@ -26,7 +26,7 @@ export default async function ServicePage({
   const { locale, slug } = await params;
   if (!slugs.includes(slug as (typeof slugs)[number])) notFound();
 
-  const t = getTranslations(locale as "tr" | "en" | "fr");
+  const t = await getTranslations(locale as "tr" | "en" | "fr");
   const detail = t.serviceDetail as Record<string, unknown>;
   const steps = (detail?.steps as Record<string, string>) ?? {};
   const serviceData = t[slug as keyof typeof t] as Record<string, unknown> | undefined;

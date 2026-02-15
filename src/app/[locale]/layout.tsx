@@ -16,7 +16,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!isValidLocale(locale)) notFound();
 
-  const t = getTranslations(locale);
+  const t = await getTranslations(locale);
 
   return (
     <>

@@ -52,6 +52,14 @@ const SECTIONS: Section[] = [
     ],
   },
   {
+    title: "📧 İletişim bilgileri – E-posta, telefon, adres (İletişim sayfasında altında görünür)",
+    fields: [
+      { path: "contact.emailValue", label: "E-posta adresi", placeholder: "Örn: info@mfkdanismanlik.com" },
+      { path: "contact.phoneValue", label: "Telefon numarası", placeholder: "Örn: +90 (555) 123 45 67" },
+      { path: "contact.addressValue", label: "Adres", placeholder: "Örn: İstanbul, Türkiye" },
+    ],
+  },
+  {
     title: "Menü (üst navigasyon)",
     fields: [
       { path: "nav.home", label: "Ana Sayfa" },
@@ -138,6 +146,9 @@ const SECTIONS: Section[] = [
       { path: "contact.tagline", label: "Alt başlık" },
       { path: "contact.getInTouch", label: "Bize Ulaşın (başlık)" },
       { path: "contact.contactInfo", label: "İletişim Bilgileri (başlık)" },
+      { path: "contact.emailValue", label: "E-posta adresi (sayfada görünen)" },
+      { path: "contact.phoneValue", label: "Telefon numarası (sayfada görünen)" },
+      { path: "contact.addressValue", label: "Adres (sayfada görünen)" },
       { path: "contact.expectText", label: "Beklenen süre metni" },
       { path: "contact.sendMessage", label: "Mesaj Gönderin (başlık)" },
       { path: "contact.nameLabel", label: "Form – Ad Soyad etiketi" },

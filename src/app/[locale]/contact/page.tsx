@@ -44,10 +44,10 @@ export default async function ContactPage({
                 <div>
                   <p className="font-medium text-zinc-900">{c?.email ?? "Email"}</p>
                   <a
-                    href="mailto:hello@mfkdanismanlik.com"
+                    href={`mailto:${c?.emailValue ?? ""}`}
                     className="text-sm text-zinc-600 hover:text-zinc-900"
                   >
-                    hello@mfkdanismanlik.com
+                    {c?.emailValue ?? ""}
                   </a>
                 </div>
               </li>
@@ -58,10 +58,10 @@ export default async function ContactPage({
                 <div>
                   <p className="font-medium text-zinc-900">{c?.phone ?? "Phone"}</p>
                   <a
-                    href="tel:+905551234567"
+                    href={`tel:${(c?.phoneValue ?? "").replace(/\s/g, "")}`}
                     className="text-sm text-zinc-600 hover:text-zinc-900"
                   >
-                    +90 (555) 123 45 67
+                    {c?.phoneValue ?? ""}
                   </a>
                 </div>
               </li>
@@ -71,7 +71,7 @@ export default async function ContactPage({
                 </div>
                 <div>
                   <p className="font-medium text-zinc-900">{c?.address ?? "Address"}</p>
-                  <p className="text-sm text-zinc-600">İstanbul, Türkiye</p>
+                  <p className="text-sm text-zinc-600">{c?.addressValue ?? ""}</p>
                 </div>
               </li>
             </ul>

@@ -300,7 +300,7 @@ export function AdminPanel() {
         MFK Danışmanlık – İçerik düzenleme
       </h1>
       <p className="mb-6 text-sm text-zinc-500">
-        Aşağıdaki kutularda metinleri doğrudan düzenleyin. Kaydettikten sonra sitede görünür. Resimler için &quot;Bilgisayardan resim seç&quot; butonuna tıklayıp dosyayı seçin; yüklemeden önce yukarıdaki şifreyi girin. (İlk kullanımda Supabase Dashboard → Storage → <strong>site-images</strong> adında public bucket oluşturun.)
+        Aşağıdaki kutularda metinleri doğrudan düzenleyin. Kaydettikten sonra sitede görünür. Resimler için sadece &quot;Bilgisayardan resim seç&quot; butonuna tıklayın; bilgisayarınızda dosya penceresi açılır, resmi seçin. Yol yazmak yok. Yüklemeden önce yukarıdaki şifreyi girin. (İlk kullanımda Supabase → Storage → <strong>site-images</strong> public bucket oluşturun.)
       </p>
 
       <div className="mb-6 flex flex-wrap items-center gap-4">

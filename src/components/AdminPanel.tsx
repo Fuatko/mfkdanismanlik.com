@@ -45,7 +45,7 @@ type Section = { title: string; fields: Field[] };
 
 const SECTIONS: Section[] = [
   {
-    title: "Resimler",
+    title: "Resimler (seçtikten sonra üstteki Kaydet butonuna basın)",
     fields: [
       { path: "images.hero", label: "Ana sayfa üst banner resmi", isImage: true },
       { path: "images.aboutTeam", label: "Hakkımızda sayfası resmi", isImage: true },
@@ -257,8 +257,24 @@ export function AdminPanel() {
           body: fd,
         });
         const data = (await res.json()) as { url?: string; error?: string };
-        if (!res.ok) throw new Error(data.error || "Yükleme başarısız");
-        if (data.url) setField(targetPath, data.url);
+        if (!res.ok) {
+          if (res.status === 401) {
+            setMessage({
+              type: "err",
+              text: "Resim yüklemek için önce yukarıdaki 'Kaydetmek için şifre' kutusuna şifrenizi yazın, sonra tekrar resim seçin.",
+            });
+          } else {
+            setMessage({ type: "err", text: data.error || "Yükleme başarısız" });
+          }
+          return;
+        }
+        if (data.url) {
+          setField(targetPath, data.url);
+          setMessage({
+            type: "ok",
+            text: "Resim yüklendi. Sitede görünmesi için aşağıdaki 'Kaydet' butonuna basın.",
+          });
+        }
       } catch (err) {
         setMessage({ type: "err", text: err instanceof Error ? err.message : "Yükleme hatası" });
       }

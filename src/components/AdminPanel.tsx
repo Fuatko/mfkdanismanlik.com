@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 
 type Locale = "tr" | "en" | "fr";
 
@@ -200,8 +200,9 @@ export function AdminPanel() {
   const [message, setMessage] = useState<{ type: "ok" | "err"; text: string } | null>(null);
   const [loaded, setLoaded] = useState(false);
   const [saving, setSaving] = useState(false);
-  const [imageList, setImageList] = useState<string[]>([]);
-  const [showCustomPath, setShowCustomPath] = useState<Record<string, boolean>>({});
+  const [uploadingField, setUploadingField] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const uploadTargetRef = useRef<string | null>(null);
 
   const loadContent = useCallback(async () => {
     setMessage(null);
@@ -217,11 +218,6 @@ export function AdminPanel() {
       }
       setFormData(flat);
       setLoaded(true);
-      const imgRes = await fetch("/api/images");
-      if (imgRes.ok) {
-        const list = (await imgRes.json()) as string[];
-        setImageList(list);
-      }
     } catch (e) {
       setMessage({ type: "err", text: e instanceof Error ? e.message : "Hata oluştu" });
     }
@@ -234,6 +230,41 @@ export function AdminPanel() {
   const setField = useCallback((path: string, value: string) => {
     setFormData((prev) => ({ ...prev, [path]: value }));
   }, []);
+
+  const handleImageSelect = useCallback(
+    (fieldPath: string) => {
+      uploadTargetRef.current = fieldPath;
+      setUploadingField(fieldPath);
+      fileInputRef.current?.click();
+    },
+    []
+  );
+
+  const handleFileChange = useCallback(
+    async (e: React.ChangeEvent<HTMLInputElement>) => {
+      const targetPath = uploadTargetRef.current;
+      setUploadingField(null);
+      uploadTargetRef.current = null;
+      const file = e.target.files?.[0];
+      e.target.value = "";
+      if (!file || !targetPath) return;
+      try {
+        const fd = new FormData();
+        fd.append("file", file);
+        const res = await fetch("/api/upload", {
+          method: "POST",
+          headers: { "X-Admin-Secret": password },
+          body: fd,
+        });
+        const data = (await res.json()) as { url?: string; error?: string };
+        if (!res.ok) throw new Error(data.error || "Yükleme başarısız");
+        if (data.url) setField(targetPath, data.url);
+      } catch (err) {
+        setMessage({ type: "err", text: err instanceof Error ? err.message : "Yükleme hatası" });
+      }
+    },
+    [password, setField]
+  );
 
   const saveContent = useCallback(async () => {
     setMessage(null);
@@ -269,7 +300,7 @@ export function AdminPanel() {
         MFK Danışmanlık – İçerik düzenleme
       </h1>
       <p className="mb-6 text-sm text-zinc-500">
-        Aşağıdaki kutularda metinleri doğrudan düzenleyin. Kaydettikten sonra sitede görünür. Resim eklemek için önce resmi projedeki <strong>public/images/</strong> klasörüne koyun, sonra &quot;Ana sayfa üst banner resmi&quot; kutusuna <strong>/images/dosyaadi.jpg</strong> yazın.
+        Aşağıdaki kutularda metinleri doğrudan düzenleyin. Kaydettikten sonra sitede görünür. Resimler için &quot;Bilgisayardan resim seç&quot; butonuna tıklayıp dosyayı seçin; yüklemeden önce yukarıdaki şifreyi girin. (İlk kullanımda Supabase Dashboard → Storage → <strong>site-images</strong> adında public bucket oluşturun.)
       </p>
 
       <div className="mb-6 flex flex-wrap items-center gap-4">
@@ -329,6 +360,13 @@ export function AdminPanel() {
 
       {loaded && (
         <div className="space-y-10">
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/jpeg,image/png,image/gif,image/webp"
+            className="hidden"
+            onChange={handleFileChange}
+          />
           {SECTIONS.map((section) => (
             <section key={section.title} className="border-b border-zinc-100 pb-8 last:border-0">
               <h2 className="mb-4 text-lg font-semibold text-zinc-800">{section.title}</h2>
@@ -338,46 +376,28 @@ export function AdminPanel() {
                     <span className="mb-1 block text-sm font-medium text-zinc-600">{field.label}</span>
                     {field.isImage ? (
                       <div className="space-y-2">
-                        <select
-                          value={
-                            imageList.includes(formData[field.path] ?? "")
-                              ? (formData[field.path] ?? "")
-                              : "__custom__"
-                          }
-                          onChange={(e) => {
-                            const v = e.target.value;
-                            setField(field.path, v === "__custom__" ? (formData[field.path] ?? "") : v);
-                            setShowCustomPath((p) => ({ ...p, [field.path]: v === "__custom__" }));
-                          }}
-                          className="w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm text-zinc-900"
+                        {formData[field.path] ? (
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span className="text-sm text-zinc-600 truncate max-w-[280px]" title={formData[field.path]}>
+                              Seçili resim var
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => setField(field.path, "")}
+                              className="text-xs text-zinc-500 underline hover:text-zinc-700"
+                            >
+                              Kaldır
+                            </button>
+                          </div>
+                        ) : null}
+                        <button
+                          type="button"
+                          onClick={() => handleImageSelect(field.path)}
+                          disabled={!!uploadingField}
+                          className="rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 disabled:opacity-50"
                         >
-                          <option value="">Resim yok</option>
-                          {imageList.map((path) => (
-                            <option key={path} value={path}>
-                              {path}
-                            </option>
-                          ))}
-                          <option value="__custom__">—— Özel yol yaz ——</option>
-                        </select>
-                        {(showCustomPath[field.path] ||
-                          (formData[field.path] && !imageList.includes(formData[field.path]))) && (
-                          <input
-                            type="text"
-                            value={formData[field.path] ?? ""}
-                            onChange={(e) => setField(field.path, e.target.value)}
-                            placeholder="/images/dosya.jpg"
-                            className="w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm text-zinc-900"
-                          />
-                        )}
-                        {!showCustomPath[field.path] && (!formData[field.path] || imageList.includes(formData[field.path] ?? "")) && (
-                          <button
-                            type="button"
-                            onClick={() => setShowCustomPath((p) => ({ ...p, [field.path]: true }))}
-                            className="text-xs text-zinc-500 underline hover:text-zinc-700"
-                          >
-                            Veya özel yol yaz
-                          </button>
-                        )}
+                          {uploadingField === field.path ? "Yükleniyor…" : "Bilgisayardan resim seç"}
+                        </button>
                       </div>
                     ) : (
                       <input

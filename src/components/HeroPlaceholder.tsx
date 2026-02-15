@@ -35,6 +35,7 @@ export function HeroPlaceholder({
               className="object-cover"
               priority
               sizes="100vw"
+              unoptimized={imageUrl.startsWith("http")}
             />
             <div className="absolute inset-0 bg-black/40" />
           </div>

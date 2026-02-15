@@ -20,11 +20,16 @@ interface FooterProps {
 export function Footer({ locale, translations }: FooterProps) {
   const nav = (translations.nav as Record<string, string>) ?? {};
   const footer = (translations.footer as Record<string, string>) ?? {};
+  const contact = (translations.contact as Record<string, string>) ?? {};
 
   const links = linkKeys.map((key) => ({
     href: `/${locale}${linkPaths[key]}`,
     label: nav[key] ?? key,
   }));
+
+  const emailValue = contact.emailValue ?? "";
+  const phoneValue = contact.phoneValue ?? "";
+  const addressValue = contact.addressValue ?? "";
 
   return (
     <footer className="border-t border-zinc-200/80 bg-zinc-50/50">
@@ -38,14 +43,14 @@ export function Footer({ locale, translations }: FooterProps) {
           </div>
           <div>
             <p className="mb-4 text-sm font-semibold text-zinc-900">
-              {footer.navigation ?? "Navigation"}
+              {footer.navigation ?? "Navigasyon"}
             </p>
             <ul className="space-y-2">
               {links.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-zinc-600 transition hover:text-zinc-900"
+                    className="text-sm text-zinc-600 transition hover:text-zinc-900 hover:underline"
                   >
                     {item.label}
                   </Link>
@@ -55,21 +60,31 @@ export function Footer({ locale, translations }: FooterProps) {
           </div>
           <div>
             <p className="mb-4 text-sm font-semibold text-zinc-900">
-              {(translations.contact as Record<string, string>)?.contact ?? "Contact"}
+              {contact.contactInfo ?? "İletişim Bilgileri"}
             </p>
             <ul className="space-y-2 text-sm text-zinc-600">
-              <li className="flex items-center gap-2">
-                <Mail size={14} className="shrink-0" />
-                hello@mfkdanismanlik.com
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone size={14} className="shrink-0" />
-                +90 (555) 123 45 67
-              </li>
-              <li className="flex items-center gap-2">
-                <MapPin size={14} className="shrink-0" />
-                İstanbul, Türkiye
-              </li>
+              {emailValue && (
+                <li className="flex items-center gap-2">
+                  <Mail size={14} className="shrink-0" />
+                  <a href={`mailto:${emailValue}`} className="hover:text-zinc-900 hover:underline">
+                    {emailValue}
+                  </a>
+                </li>
+              )}
+              {phoneValue && (
+                <li className="flex items-center gap-2">
+                  <Phone size={14} className="shrink-0" />
+                  <a href={`tel:${phoneValue.replace(/\s/g, "")}`} className="hover:text-zinc-900 hover:underline">
+                    {phoneValue}
+                  </a>
+                </li>
+              )}
+              {addressValue && (
+                <li className="flex items-center gap-2">
+                  <MapPin size={14} className="shrink-0" />
+                  <span>{addressValue}</span>
+                </li>
+              )}
             </ul>
           </div>
         </div>

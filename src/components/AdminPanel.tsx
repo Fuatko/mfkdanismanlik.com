@@ -164,7 +164,7 @@ const SECTIONS: Section[] = [
     fields: [
       { path: "footer.brand", label: "Firma adı" },
       { path: "footer.brandDesc", label: "Kısa açıklama" },
-      { path: "footer.navigation", label: "Navigasyon (başlık)" },
+      { path: "footer.navigation", label: "Footer 2. sütun başlığı (örn: Navigasyon – adres değil)" },
       { path: "footer.rights", label: "Tüm hakları saklıdır metni" },
     ],
   },

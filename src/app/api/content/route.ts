@@ -55,8 +55,14 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   const secret = request.headers.get("X-Admin-Secret") ?? request.headers.get("Authorization")?.replace("Bearer ", "");
   const adminSecret = process.env.ADMIN_SECRET?.trim();
-  if (!adminSecret || secret !== adminSecret) {
-    return NextResponse.json({ error: "Yetkisiz" }, { status: 401 });
+  if (!adminSecret) {
+    return NextResponse.json(
+      { error: "Sunucuda admin şifresi tanımlı değil. Vercel → Proje → Settings → Environment Variables → ADMIN_SECRET ekleyin." },
+      { status: 503 }
+    );
+  }
+  if (secret !== adminSecret) {
+    return NextResponse.json({ error: "Yetkisiz. Girdiğiniz şifre yanlış veya Vercel'deki ADMIN_SECRET ile aynı değil." }, { status: 401 });
   }
 
   let body: { locale?: string; content?: Record<string, unknown> };

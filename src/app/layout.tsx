@@ -5,6 +5,8 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
+  preload: false, // Konsol uyarısını kaldırır (preload kullanılmadı uyarısı)
 });
 
 export const metadata: Metadata = {
@@ -19,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" className={inter.variable}>
-      <body className="min-h-screen antialiased">{children}</body>
+      <body className={`min-h-screen antialiased ${inter.className}`}>{children}</body>
     </html>
   );
 }

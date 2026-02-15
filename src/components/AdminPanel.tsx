@@ -201,8 +201,11 @@ export function AdminPanel() {
   const [loaded, setLoaded] = useState(false);
   const [saving, setSaving] = useState(false);
   const [uploadingField, setUploadingField] = useState<string | null>(null);
+  const [bucketError, setBucketError] = useState<string | null>(null);
+  const [creatingBucket, setCreatingBucket] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const uploadTargetRef = useRef<string | null>(null);
+  const bucketEnsureDone = useRef(false);
 
   const loadContent = useCallback(async () => {
     setMessage(null);
@@ -226,6 +229,15 @@ export function AdminPanel() {
   useEffect(() => {
     if (loaded) loadContent();
   }, [locale]); // locale değişince içeriği yeniden yükle
+
+  // Şifre girilip içerik yüklendiyse bir kez arka planda bucket oluşturmayı dene (resim yükleme hazır olsun)
+  useEffect(() => {
+    if (!loaded || !password?.trim() || bucketEnsureDone.current) return;
+    bucketEnsureDone.current = true;
+    fetch("/api/upload?createBucket=1", { headers: { "X-Admin-Secret": password } })
+      .then((r) => r.json())
+      .catch(() => {});
+  }, [loaded, password]);
 
   const setField = useCallback((path: string, value: string) => {
     setFormData((prev) => ({ ...prev, [path]: value }));
@@ -256,7 +268,12 @@ export function AdminPanel() {
           headers: { "X-Admin-Secret": password },
           body: fd,
         });
-        const data = (await res.json()) as { url?: string; error?: string };
+        let data: { url?: string; error?: string };
+        try {
+          data = (await res.json()) as { url?: string; error?: string };
+        } catch {
+          data = { error: "Sunucu yanıtı okunamadı." };
+        }
         if (!res.ok) {
           if (res.status === 401) {
             setMessage({
@@ -264,15 +281,24 @@ export function AdminPanel() {
               text: "Resim yüklemek için önce yukarıdaki 'Kaydetmek için şifre' kutusuna şifrenizi yazın, sonra tekrar resim seçin.",
             });
           } else {
-            setMessage({ type: "err", text: data.error || "Yükleme başarısız" });
+            const errText = data?.error || "Yükleme başarısız";
+            setMessage({ type: "err", text: errText });
+            if (/bucket|bulunamadı/i.test(errText)) setBucketError(errText);
           }
           return;
         }
-        if (data.url) {
-          setField(targetPath, data.url);
+        setBucketError(null);
+        const url = data?.url?.trim();
+        if (url) {
+          setField(targetPath, url);
           setMessage({
             type: "ok",
-            text: "Resim yüklendi. Sitede görünmesi için aşağıdaki 'Kaydet' butonuna basın.",
+            text: "Resim yüklendi, link forma yazıldı. Sitede görünmesi için üstteki 'Kaydet' butonuna basın.",
+          });
+        } else {
+          setMessage({
+            type: "err",
+            text: "Sunucu link döndürmedi. Supabase bucket (site-images) ve Vercel env (SUPABASE_SERVICE_ROLE_KEY) kontrol edin.",
           });
         }
       } catch (err) {
@@ -281,6 +307,31 @@ export function AdminPanel() {
     },
     [password, setField]
   );
+
+  const tryCreateBucket = useCallback(async () => {
+    if (!password?.trim()) {
+      setMessage({ type: "err", text: "Önce şifre kutusuna ADMIN_SECRET yazın." });
+      return;
+    }
+    setCreatingBucket(true);
+    setMessage(null);
+    try {
+      const res = await fetch("/api/upload?createBucket=1", {
+        headers: { "X-Admin-Secret": password },
+      });
+      const data = (await res.json()) as { ok?: boolean; error?: string; message?: string };
+      if (res.ok && data.ok !== false) {
+        setBucketError(null);
+        setMessage({ type: "ok", text: data.message || "Bucket oluşturuldu. Birkaç saniye sonra resim seçin." });
+      } else {
+        setMessage({ type: "err", text: data?.error || "Bucket oluşturulamadı." });
+      }
+    } catch (e) {
+      setMessage({ type: "err", text: e instanceof Error ? e.message : "İstek hatası" });
+    } finally {
+      setCreatingBucket(false);
+    }
+  }, [password]);
 
   const saveContent = useCallback(async () => {
     setMessage(null);
@@ -332,6 +383,35 @@ export function AdminPanel() {
       <p className="mb-6 text-sm text-zinc-500">
         Aşağıdaki kutularda metinleri doğrudan düzenleyin. Kaydettikten sonra sitede görünür. Resimler için sadece &quot;Bilgisayardan resim seç&quot; butonuna tıklayın; bilgisayarınızda dosya penceresi açılır, resmi seçin. Yol yazmak yok. Yüklemeden önce yukarıdaki şifreyi girin. (İlk kullanımda Supabase → Storage → <strong>site-images</strong> public bucket oluşturun.)
       </p>
+
+      {bucketError && (
+        <div className="mb-6 rounded-xl border-2 border-amber-300 bg-amber-50 p-4">
+          <h3 className="mb-2 font-semibold text-amber-900">Bucket bulunamadı – resim yüklenemiyor</h3>
+          <p className="mb-3 text-sm text-amber-800">{bucketError}</p>
+          <p className="mb-3 text-sm font-medium text-amber-900">Yapmanız gerekenler (birini seçin):</p>
+          <ol className="mb-4 list-decimal space-y-1 pl-5 text-sm text-amber-800">
+            <li><strong>Otomatik:</strong> Şifreyi girdiyseniz aşağıdaki butona tıklayın; bucket oluşturulmaya çalışılır.</li>
+            <li><strong>Manuel:</strong> Supabase Dashboard → Storage → New bucket → İsim: <code className="rounded bg-amber-100 px-1">site-images</code> (tam bu isim) → Public bucket işaretli → Create.</li>
+          </ol>
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={tryCreateBucket}
+              disabled={!!creatingBucket}
+              className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-medium text-white hover:bg-amber-700 disabled:opacity-50"
+            >
+              {creatingBucket ? "Deneniyor…" : "Bucket'ı oluşturmayı dene"}
+            </button>
+            <button
+              type="button"
+              onClick={() => setBucketError(null)}
+              className="rounded-lg border border-amber-600 px-4 py-2 text-sm text-amber-800 hover:bg-amber-100"
+            >
+              Uyarıyı kapat
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className="mb-6 flex flex-wrap items-center gap-4">
         <label className="flex items-center gap-2">
@@ -407,17 +487,27 @@ export function AdminPanel() {
                     {field.isImage ? (
                       <div className="space-y-2">
                         {formData[field.path] ? (
-                          <div className="flex flex-wrap items-center gap-2">
-                            <span className="text-sm text-zinc-600 truncate max-w-[280px]" title={formData[field.path]}>
-                              Seçili resim var
-                            </span>
-                            <button
-                              type="button"
-                              onClick={() => setField(field.path, "")}
-                              className="text-xs text-zinc-500 underline hover:text-zinc-700"
+                          <div className="space-y-1">
+                            <div className="flex flex-wrap items-center gap-2">
+                              <span className="text-sm font-medium text-emerald-700">Link eklendi</span>
+                              <button
+                                type="button"
+                                onClick={() => setField(field.path, "")}
+                                className="text-xs text-zinc-500 underline hover:text-zinc-700"
+                              >
+                                Kaldır
+                              </button>
+                            </div>
+                            <a
+                              href={formData[field.path]}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-xs text-zinc-500 truncate max-w-full hover:text-zinc-700"
+                              title={formData[field.path]}
                             >
-                              Kaldır
-                            </button>
+                              {formData[field.path]}
+                            </a>
+                            <p className="text-xs text-zinc-500">Kaydet butonuna basınca sitede görünür.</p>
                           </div>
                         ) : null}
                         <button

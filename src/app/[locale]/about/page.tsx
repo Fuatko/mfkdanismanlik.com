@@ -23,13 +23,14 @@ export default async function AboutPage({
 
   return (
     <>
-      <Section className="pb-8 md:pb-12">
+      <Section className="pt-2 pb-8 md:pt-4 md:pb-12">
         <HeroPlaceholder
           title={(a?.title as string) ?? "About Us"}
           tagline={(a?.tagline as string) ?? ""}
           size="mini"
           imageUrl={aboutImageUrl}
           imageAlt="Hakkımızda"
+          imagePosition="top"
         />
       </Section>
       <Section>

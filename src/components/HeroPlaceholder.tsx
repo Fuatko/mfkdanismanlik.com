@@ -7,6 +7,8 @@ interface HeroPlaceholderProps {
   size?: "full" | "mini";
   imageUrl?: string;
   imageAlt?: string;
+  /** Resmin çerçeve içinde hizası: "top" = üst kısım görünsün, "center" = ortası */
+  imagePosition?: "top" | "center";
 }
 
 export function HeroPlaceholder({ 
@@ -15,15 +17,17 @@ export function HeroPlaceholder({
   abstract, 
   size = "full",
   imageUrl,
-  imageAlt = "Hero image"
+  imageAlt = "Hero image",
+  imagePosition = "center"
 }: HeroPlaceholderProps) {
   const isMini = size === "mini";
+  const objectPos = imagePosition === "top" ? "object-top" : "object-center";
 
   return (
     <div
       className={`relative overflow-hidden rounded-xl border border-zinc-200/80 ${
         imageUrl ? "" : "bg-gradient-to-br from-zinc-100 via-zinc-50 to-white"
-      } ${isMini ? "py-12 md:py-16" : "py-16 md:py-24"}`}
+      } ${isMini ? "py-8 md:py-12" : "py-16 md:py-24"}`}
     >
       {imageUrl ? (
         <>
@@ -32,7 +36,7 @@ export function HeroPlaceholder({
               src={imageUrl}
               alt={imageAlt}
               fill
-              className="object-cover"
+              className={`object-cover ${objectPos}`}
               priority
               sizes="100vw"
               unoptimized={imageUrl.startsWith("http")}

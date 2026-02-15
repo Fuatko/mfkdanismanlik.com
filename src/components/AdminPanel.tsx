@@ -40,15 +40,21 @@ function clone(obj: Record<string, unknown>): Record<string, unknown> {
   return JSON.parse(JSON.stringify(obj));
 }
 
-type Field = { path: string; label: string; placeholder?: string; isImage?: boolean };
+type Field = { path: string; label: string; placeholder?: string; isImage?: boolean; multiline?: boolean };
 type Section = { title: string; fields: Field[] };
 
 const SECTIONS: Section[] = [
   {
     title: "Resimler (seçtikten sonra üstteki Kaydet butonuna basın)",
     fields: [
-      { path: "images.hero", label: "Ana sayfa üst banner resmi", isImage: true },
-      { path: "images.aboutTeam", label: "Hakkımızda sayfası resmi", isImage: true },
+      { path: "images.hero", label: "Ana sayfa üst banner", isImage: true },
+      { path: "images.aboutTeam", label: "Hakkımızda sayfası", isImage: true },
+      { path: "images.servicesBanner", label: "Hizmetler sayfası üst banner", isImage: true },
+      { path: "images.serviceStrategicPlanning", label: "Hizmet detay: Stratejik Planlama", isImage: true },
+      { path: "images.serviceOrganizationDesign", label: "Hizmet detay: Organizasyon Tasarımı", isImage: true },
+      { path: "images.servicePerformanceManagement", label: "Hizmet detay: Performans Yönetimi", isImage: true },
+      { path: "images.serviceHumanResources", label: "Hizmet detay: İnsan Kaynakları", isImage: true },
+      { path: "images.serviceExecutiveDashboard", label: "Hizmet detay: Üst Yönetim Dashboard", isImage: true },
     ],
   },
   {
@@ -181,20 +187,156 @@ const SECTIONS: Section[] = [
     ],
   },
   {
-    title: "Hizmetler sayfası – Başlık ve beş hizmet kartı",
+    title: "Hizmetler sayfası – Başlık, alt başlık ve çerçeve",
     fields: [
       { path: "services.title", label: "Hizmetler sayfası başlığı" },
-      { path: "services.tagline", label: "Hizmetler sayfası alt başlık" },
+      { path: "services.tagline", label: "Hizmetler sayfası alt başlık (paragraf)" },
+      { path: "services.serviceAreas", label: "Hizmet Alanlarımız (alt başlık)" },
+      { path: "services.framework", label: "Çerçevemiz (alt başlık)" },
+      { path: "services.frameworkBlocks.diagnose", label: "Çerçeve 1 başlık" },
+      { path: "services.frameworkBlocks.diagnoseDesc", label: "Çerçeve 1 açıklama" },
+      { path: "services.frameworkBlocks.design", label: "Çerçeve 2 başlık" },
+      { path: "services.frameworkBlocks.designDesc", label: "Çerçeve 2 açıklama" },
+      { path: "services.frameworkBlocks.implement", label: "Çerçeve 3 başlık" },
+      { path: "services.frameworkBlocks.implementDesc", label: "Çerçeve 3 açıklama" },
+      { path: "services.frameworkBlocks.sustain", label: "Çerçeve 4 başlık" },
+      { path: "services.frameworkBlocks.sustainDesc", label: "Çerçeve 4 açıklama" },
+    ],
+  },
+  {
+    title: "Hizmetler sayfası – Beş hizmet kartı (liste)",
+    fields: [
       { path: "services.strategicPlanning", label: "Hizmet 1 başlık" },
-      { path: "services.strategicPlanningDesc", label: "Hizmet 1 açıklama" },
+      { path: "services.strategicPlanningDesc", label: "Hizmet 1 kısa açıklama" },
       { path: "services.organizationDesign", label: "Hizmet 2 başlık" },
-      { path: "services.organizationDesignDesc", label: "Hizmet 2 açıklama" },
+      { path: "services.organizationDesignDesc", label: "Hizmet 2 kısa açıklama" },
       { path: "services.performanceManagement", label: "Hizmet 3 başlık" },
-      { path: "services.performanceManagementDesc", label: "Hizmet 3 açıklama" },
-      { path: "services.humanResources", label: "Hizmet 4 başlık (İnsan Kaynakları)" },
-      { path: "services.humanResourcesDesc", label: "Hizmet 4 açıklama" },
-      { path: "services.executiveDashboard", label: "Hizmet 5 başlık (Üst Yönetim Dashboard)" },
-      { path: "services.executiveDashboardDesc", label: "Hizmet 5 açıklama" },
+      { path: "services.performanceManagementDesc", label: "Hizmet 3 kısa açıklama" },
+      { path: "services.humanResources", label: "Hizmet 4 başlık" },
+      { path: "services.humanResourcesDesc", label: "Hizmet 4 kısa açıklama" },
+      { path: "services.executiveDashboard", label: "Hizmet 5 başlık" },
+      { path: "services.executiveDashboardDesc", label: "Hizmet 5 kısa açıklama" },
+    ],
+  },
+  {
+    title: "Hizmet detay: 1. Stratejik Planlama ve Hedef Yönetimi",
+    fields: [
+      { path: "strategicPlanning.tagline", label: "Başlık altı metin (paragraf)", placeholder: "Uzun açıklama", multiline: true },
+      { path: "strategicPlanning.painPoints.0", label: "Yaygın zorluk 1" },
+      { path: "strategicPlanning.painPoints.1", label: "Yaygın zorluk 2" },
+      { path: "strategicPlanning.painPoints.2", label: "Yaygın zorluk 3" },
+      { path: "strategicPlanning.deliverables.0", label: "Ne sunuyoruz 1" },
+      { path: "strategicPlanning.deliverables.1", label: "Ne sunuyoruz 2" },
+      { path: "strategicPlanning.deliverables.2", label: "Ne sunuyoruz 3" },
+      { path: "strategicPlanning.deliverables.3", label: "Ne sunuyoruz 4" },
+    ],
+  },
+  {
+    title: "Hizmet detay: 2. Organizasyon Tasarımı ve Yapısal Mimari",
+    fields: [
+      { path: "organizationDesign.tagline", label: "Başlık altı metin (paragraf)", multiline: true },
+      { path: "organizationDesign.painPoints.0", label: "Yaygın zorluk 1" },
+      { path: "organizationDesign.painPoints.1", label: "Yaygın zorluk 2" },
+      { path: "organizationDesign.painPoints.2", label: "Yaygın zorluk 3" },
+      { path: "organizationDesign.deliverables.0", label: "Ne sunuyoruz 1" },
+      { path: "organizationDesign.deliverables.1", label: "Ne sunuyoruz 2" },
+      { path: "organizationDesign.deliverables.2", label: "Ne sunuyoruz 3" },
+      { path: "organizationDesign.deliverables.3", label: "Ne sunuyoruz 4" },
+    ],
+  },
+  {
+    title: "Hizmet detay: 3. Performans Yönetim Sistemi",
+    fields: [
+      { path: "performanceManagement.tagline", label: "Başlık altı metin (paragraf)", multiline: true },
+      { path: "performanceManagement.painPoints.0", label: "Yaygın zorluk 1" },
+      { path: "performanceManagement.painPoints.1", label: "Yaygın zorluk 2" },
+      { path: "performanceManagement.painPoints.2", label: "Yaygın zorluk 3" },
+      { path: "performanceManagement.deliverables.0", label: "Ne sunuyoruz 1" },
+      { path: "performanceManagement.deliverables.1", label: "Ne sunuyoruz 2" },
+      { path: "performanceManagement.deliverables.2", label: "Ne sunuyoruz 3" },
+      { path: "performanceManagement.deliverables.3", label: "Ne sunuyoruz 4" },
+    ],
+  },
+  {
+    title: "Hizmet detay: 4. İnsan Kaynakları ve Yetkinlik Mimarisi",
+    fields: [
+      { path: "humanResources.tagline", label: "Başlık altı metin (paragraf)", multiline: true },
+      { path: "humanResources.painPoints.0", label: "Yaygın zorluk 1" },
+      { path: "humanResources.painPoints.1", label: "Yaygın zorluk 2" },
+      { path: "humanResources.painPoints.2", label: "Yaygın zorluk 3" },
+      { path: "humanResources.deliverables.0", label: "Ne sunuyoruz 1" },
+      { path: "humanResources.deliverables.1", label: "Ne sunuyoruz 2" },
+      { path: "humanResources.deliverables.2", label: "Ne sunuyoruz 3" },
+      { path: "humanResources.deliverables.3", label: "Ne sunuyoruz 4" },
+    ],
+  },
+  {
+    title: "Hizmet detay: 5. Üst Yönetim Dashboard ve Raporlama",
+    fields: [
+      { path: "executiveDashboard.tagline", label: "Başlık altı metin (paragraf)", multiline: true },
+      { path: "executiveDashboard.painPoints.0", label: "Yaygın zorluk 1" },
+      { path: "executiveDashboard.painPoints.1", label: "Yaygın zorluk 2" },
+      { path: "executiveDashboard.painPoints.2", label: "Yaygın zorluk 3" },
+      { path: "executiveDashboard.deliverables.0", label: "Ne sunuyoruz 1" },
+      { path: "executiveDashboard.deliverables.1", label: "Ne sunuyoruz 2" },
+      { path: "executiveDashboard.deliverables.2", label: "Ne sunuyoruz 3" },
+      { path: "executiveDashboard.deliverables.3", label: "Ne sunuyoruz 4" },
+    ],
+  },
+  {
+    title: "Metodoloji sayfası – Tüm içerik",
+    fields: [
+      { path: "methodology.title", label: "Sayfa başlığı" },
+      { path: "methodology.tagline", label: "Alt başlık (paragraf)" },
+      { path: "methodology.fiveStep", label: "Beş Adımlı Süreç (başlık)" },
+      { path: "methodology.steps.discover", label: "Adım 1 başlık" },
+      { path: "methodology.steps.discoverDesc", label: "Adım 1 açıklama" },
+      { path: "methodology.steps.diagnose", label: "Adım 2 başlık" },
+      { path: "methodology.steps.diagnoseDesc", label: "Adım 2 açıklama" },
+      { path: "methodology.steps.design", label: "Adım 3 başlık" },
+      { path: "methodology.steps.designDesc", label: "Adım 3 açıklama" },
+      { path: "methodology.steps.deliver", label: "Adım 4 başlık" },
+      { path: "methodology.steps.deliverDesc", label: "Adım 4 açıklama" },
+      { path: "methodology.steps.sustain", label: "Adım 5 başlık" },
+      { path: "methodology.steps.sustainDesc", label: "Adım 5 açıklama" },
+      { path: "methodology.toolbox", label: "Araç Kutumuz (başlık)" },
+      { path: "methodology.tools.valueStream", label: "Araç 1" },
+      { path: "methodology.tools.scorecard", label: "Araç 2" },
+      { path: "methodology.tools.stakeholder", label: "Araç 3" },
+      { path: "methodology.tools.facilitation", label: "Araç 4" },
+      { path: "methodology.tools.metrics", label: "Araç 5" },
+    ],
+  },
+  {
+    title: "Referanslar sayfası – Tüm içerik",
+    fields: [
+      { path: "cases.title", label: "Sayfa başlığı" },
+      { path: "cases.tagline", label: "Alt başlık" },
+      { path: "cases.selected", label: "Seçilmiş Projeler (alt başlık)" },
+      { path: "cases.categories.strategy", label: "Kategori 1 başlık" },
+      { path: "cases.categories.strategyDesc", label: "Kategori 1 açıklama" },
+      { path: "cases.categories.operations", label: "Kategori 2 başlık" },
+      { path: "cases.categories.operationsDesc", label: "Kategori 2 açıklama" },
+      { path: "cases.categories.digital", label: "Kategori 3 başlık" },
+      { path: "cases.categories.digitalDesc", label: "Kategori 3 açıklama" },
+      { path: "cases.categories.people", label: "Kategori 4 başlık" },
+      { path: "cases.categories.peopleDesc", label: "Kategori 4 açıklama" },
+    ],
+  },
+  {
+    title: "Kaynaklar sayfası – Tüm içerik",
+    fields: [
+      { path: "resources.title", label: "Sayfa başlığı" },
+      { path: "resources.tagline", label: "Alt başlık" },
+      { path: "resources.hub", label: "Bilgi Merkezi (alt başlık)" },
+      { path: "resources.types.articles", label: "Tür 1 başlık (Makaleler)" },
+      { path: "resources.types.articlesDesc", label: "Tür 1 açıklama" },
+      { path: "resources.types.whitepapers", label: "Tür 2 başlık" },
+      { path: "resources.types.whitepapersDesc", label: "Tür 2 açıklama" },
+      { path: "resources.types.videos", label: "Tür 3 başlık" },
+      { path: "resources.types.videosDesc", label: "Tür 3 açıklama" },
+      { path: "resources.types.tools", label: "Tür 4 başlık" },
+      { path: "resources.types.toolsDesc", label: "Tür 4 açıklama" },
     ],
   },
   {
@@ -498,6 +640,24 @@ export function AdminPanel() {
 
       {loaded && (
         <div className="space-y-10">
+          <div className="sticky top-2 z-10 rounded-xl border border-zinc-200 bg-zinc-50/95 p-4 shadow-sm backdrop-blur">
+            <p className="mb-2 text-sm font-medium text-zinc-700">Bölüme atla (Hizmet detayları aşağıda listelenir)</p>
+            <select
+              className="w-full max-w-md rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-800"
+              onChange={(e) => {
+                const id = e.target.value;
+                if (id) document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+              value=""
+            >
+              <option value="">— Bölüm seçin —</option>
+              {SECTIONS.map((sec, idx) => (
+                <option key={sec.title} value={`section-${idx}`}>
+                  {sec.title}
+                </option>
+              ))}
+            </select>
+          </div>
           <input
             ref={fileInputRef}
             type="file"
@@ -505,9 +665,18 @@ export function AdminPanel() {
             className="hidden"
             onChange={handleFileChange}
           />
-          {SECTIONS.map((section) => (
-            <section key={section.title} className="border-b border-zinc-100 pb-8 last:border-0">
+          {SECTIONS.map((section, sectionIndex) => (
+            <section
+              key={section.title}
+              id={`section-${sectionIndex}`}
+              className="scroll-mt-24 border-b border-zinc-100 pb-8 last:border-0"
+            >
               <h2 className="mb-4 text-lg font-semibold text-zinc-800">{section.title}</h2>
+              {section.title.startsWith("Hizmet detay:") && (
+                <p className="mb-4 rounded-lg border border-blue-200 bg-blue-50 px-3 py-2 text-sm text-blue-800">
+                  Bu alanlar, Hizmetler sayfasındaki kartlara tıklayınca açılan <strong>detay sayfasında</strong> görünür. Başlık altı metin, yaygın zorluklar ve &quot;Ne sunuyoruz&quot; listesini buradan doldurun. Bu hizmet sayfasına <strong>fotoğraf</strong> eklemek için yukarıdaki <strong>Resimler</strong> bölümünde &quot;Hizmet detay: …&quot; ilgili alanından resim seçin.
+                </p>
+              )}
               <div className="space-y-3">
                 {section.fields.map((field) => (
                   <label key={field.path} className="block">
@@ -547,6 +716,14 @@ export function AdminPanel() {
                           {uploadingField === field.path ? "Yükleniyor…" : "Bilgisayardan resim seç"}
                         </button>
                       </div>
+                    ) : field.multiline ? (
+                      <textarea
+                        value={formData[field.path] ?? ""}
+                        onChange={(e) => setField(field.path, e.target.value)}
+                        placeholder={field.placeholder}
+                        rows={4}
+                        className="w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm text-zinc-900"
+                      />
                     ) : (
                       <input
                         type="text"

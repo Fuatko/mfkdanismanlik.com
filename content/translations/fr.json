@@ -1,7 +1,13 @@
 {
   "images": {
     "hero": "",
-    "aboutTeam": ""
+    "aboutTeam": "",
+    "servicesBanner": "",
+    "serviceStrategicPlanning": "",
+    "serviceOrganizationDesign": "",
+    "servicePerformanceManagement": "",
+    "serviceHumanResources": "",
+    "serviceExecutiveDashboard": ""
   },
   "nav": {
     "home": "Accueil",

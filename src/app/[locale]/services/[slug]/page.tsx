@@ -17,7 +17,25 @@ const SLUG_TO_KEY: Record<string, string> = {
   "human-resources": "humanResources",
   "executive-dashboard": "executiveDashboard",
 };
+const SLUG_TO_IMAGE_KEY: Record<string, string> = {
+  "strategic-planning": "serviceStrategicPlanning",
+  "organization-design": "serviceOrganizationDesign",
+  "performance-management": "servicePerformanceManagement",
+  "human-resources": "serviceHumanResources",
+  "executive-dashboard": "serviceExecutiveDashboard",
+};
 const slugs = ["strategic-planning", "organization-design", "performance-management", "human-resources", "executive-dashboard"] as const;
+
+function toArray(value: unknown): string[] {
+  if (Array.isArray(value)) return value.filter((v): v is string => typeof v === "string");
+  if (value && typeof value === "object") {
+    return Object.keys(value)
+      .sort((a, b) => Number(a) - Number(b))
+      .map((k) => (value as Record<string, string>)[k])
+      .filter((v): v is string => typeof v === "string");
+  }
+  return [];
+}
 
 export function generateStaticParams() {
   return slugs.flatMap((slug) =>
@@ -44,8 +62,12 @@ export default async function ServicePage({
 
   const title = serviceData.title as string;
   const tagline = serviceData.tagline as string;
-  const painPoints = (serviceData.painPoints as string[]) ?? [];
-  const deliverables = (serviceData.deliverables as string[]) ?? [];
+  const painPoints = toArray(serviceData.painPoints);
+  const deliverables = toArray(serviceData.deliverables);
+
+  const images = (t as Record<string, unknown>).images as Record<string, string> | undefined;
+  const imageKey = SLUG_TO_IMAGE_KEY[slug];
+  const heroImageUrl = imageKey && images?.[imageKey] ? String(images[imageKey]).trim() : undefined;
 
   const STEPS = [
     { title: steps.discover, description: steps.discoverDesc },
@@ -58,7 +80,7 @@ export default async function ServicePage({
   return (
     <>
       <Section className="pb-8 md:pb-12">
-        <HeroPlaceholder title={title} tagline={tagline} size="mini" />
+        <HeroPlaceholder title={title} tagline={tagline} size="mini" imageUrl={heroImageUrl} imageAlt={title} />
       </Section>
 
       {painPoints.length > 0 && (

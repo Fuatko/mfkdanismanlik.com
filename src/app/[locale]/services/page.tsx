@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Target, Layout, BarChart3, Users, LayoutDashboard } from "lucide-react";
 import {
   Section,
+  HeroPlaceholder,
   IconCard,
   CTABox,
   FrameworkDiagram,
@@ -34,16 +35,33 @@ export default async function ServicesPage({
     { title: blocks.sustain, description: blocks.sustainDesc },
   ];
 
+  const images = t.images as Record<string, string> | undefined;
+  const bannerUrl = images?.servicesBanner?.trim();
+
   return (
     <>
+      {bannerUrl ? (
+        <Section className="pb-8 md:pb-12">
+          <HeroPlaceholder
+            title={String(srv?.title ?? "Hizmetler")}
+            tagline={srv?.tagline as string}
+            size="mini"
+            imageUrl={bannerUrl}
+            imageAlt={String(srv?.title ?? "Hizmetler")}
+          />
+        </Section>
+      ) : null}
       <Section>
-        <h1 className="mb-4 text-3xl font-semibold text-zinc-900 md:text-4xl">
-          {(srv?.title as string) ?? "Services"}
-        </h1>
-        <p className="mb-12 max-w-2xl text-lg text-zinc-600">
-          {(srv?.tagline as string) ?? ""}
-        </p>
-
+        {!bannerUrl && (
+          <>
+            <h1 className="mb-4 text-3xl font-semibold text-zinc-900 md:text-4xl">
+              {(srv?.title as string) ?? "Services"}
+            </h1>
+            <p className="mb-12 max-w-2xl text-lg text-zinc-600">
+              {(srv?.tagline as string) ?? ""}
+            </p>
+          </>
+        )}
         <h2 className="mb-8 text-xl font-semibold text-zinc-900 md:text-2xl">
           {(srv?.serviceAreas as string) ?? ""}
         </h2>

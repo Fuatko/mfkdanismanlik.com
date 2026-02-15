@@ -40,13 +40,17 @@ export async function GET(request: Request) {
       .eq("locale", locale)
       .single();
     if (data?.content) {
-      return NextResponse.json(data.content as Record<string, unknown>);
+      return NextResponse.json(data.content as Record<string, unknown>, {
+        headers: { "Cache-Control": "no-store, max-age=0" },
+      });
     }
   }
 
   try {
     const content = getContentFromFile(locale);
-    return NextResponse.json(content);
+    return NextResponse.json(content, {
+      headers: { "Cache-Control": "no-store, max-age=0" },
+    });
   } catch {
     return NextResponse.json({ error: "İçerik okunamadı" }, { status: 500 });
   }

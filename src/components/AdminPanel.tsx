@@ -210,7 +210,7 @@ export function AdminPanel() {
   const loadContent = useCallback(async () => {
     setMessage(null);
     try {
-      const res = await fetch(`/api/content?locale=${locale}`);
+      const res = await fetch(`/api/content?locale=${locale}`, { cache: "no-store" });
       if (!res.ok) throw new Error("İçerik alınamadı");
       const content = (await res.json()) as Record<string, unknown>;
       const flat: Record<string, string> = {};
@@ -229,6 +229,15 @@ export function AdminPanel() {
   useEffect(() => {
     if (loaded) loadContent();
   }, [locale]); // locale değişince içeriği yeniden yükle
+
+  // Sekme tekrar açılınca içeriği (resim dahil) taze yükle
+  useEffect(() => {
+    const onVisible = () => {
+      if (document.visibilityState === "visible" && loaded) loadContent();
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => document.removeEventListener("visibilitychange", onVisible);
+  }, [loaded, loadContent]);
 
   // Şifre girilip içerik yüklendiyse bir kez arka planda bucket oluşturmayı dene (resim yükleme hazır olsun)
   useEffect(() => {
@@ -367,7 +376,7 @@ export function AdminPanel() {
             : "";
         throw new Error(msg + hint);
       }
-      setMessage({ type: "ok", text: "Kaydedildi. Siteyi yenileyerek görebilirsiniz." });
+      setMessage({ type: "ok", text: `${LOCALE_LABELS[locale]} kaydedildi. Sitede /${locale} sayfasını yenileyerek görebilirsiniz.` });
     } catch (e) {
       setMessage({ type: "err", text: e instanceof Error ? e.message : "Kayıt hatası" });
     } finally {
@@ -415,16 +424,18 @@ export function AdminPanel() {
 
       <div className="mb-6 flex flex-wrap items-center gap-4">
         <label className="flex items-center gap-2">
-          <span className="text-sm font-medium text-zinc-700">Dil:</span>
+          <span className="text-sm font-medium text-zinc-700">Düzenlenen dil:</span>
           <select
             value={locale}
             onChange={(e) => setLocale(e.target.value as Locale)}
             className="rounded-lg border border-zinc-300 px-3 py-2 text-sm"
+            title="Değiştirince o dilin içeriği yüklenir; Kaydet ile sadece bu dil güncellenir."
           >
             {(Object.keys(LOCALE_LABELS) as Locale[]).map((l) => (
-              <option key={l} value={l}>{LOCALE_LABELS[l]}</option>
+              <option key={l} value={l}>{LOCALE_LABELS[l]} ({l})</option>
             ))}
           </select>
+          <span className="text-xs text-zinc-500">Kaydet = sadece bu dil</span>
         </label>
         {!loaded ? (
           <button

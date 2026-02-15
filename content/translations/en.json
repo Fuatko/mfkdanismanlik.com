@@ -21,14 +21,12 @@
     "ctaTitle": "Ready to Start?",
     "ctaDesc": "Let's discuss how we can help you achieve your strategic objectives.",
     "cards": {
-      "strategy": "Strategy",
-      "strategyDesc": "Clarify direction and align resources for growth.",
-      "operations": "Operations",
-      "operationsDesc": "Streamline processes and reduce waste.",
-      "transformation": "Transformation",
-      "transformationDesc": "Navigate change with minimal disruption.",
-      "people": "People",
-      "peopleDesc": "Build capability and strengthen culture."
+      "strategicPlanning": "Strategic Planning and Goal Management",
+      "strategicPlanningDesc": "Clarify your goals and bring your strategic plan to life.",
+      "organizationDesign": "Organization Design and Structural Architecture",
+      "organizationDesignDesc": "Align your structure with your goals.",
+      "performanceManagement": "Performance Management System",
+      "performanceManagementDesc": "Manage performance for measurable results."
     },
     "steps": {
       "discover": "Discover",
@@ -45,7 +43,7 @@
   },
   "services": {
     "title": "Services",
-    "tagline": "End-to-end consulting across strategy, operations, and people",
+    "tagline": "Management systems: strategic planning, organization design, and performance management",
     "serviceAreas": "Our Service Areas",
     "framework": "Our Framework",
     "frameworkBlocks": {
@@ -58,14 +56,12 @@
       "sustain": "Sustain",
       "sustainDesc": "Embed capabilities and measure outcomes."
     },
-    "strategy": "Strategy",
-    "strategyDesc": "Strategic planning, portfolio optimization, growth strategy.",
-    "operations": "Operations",
-    "operationsDesc": "Process improvement, supply chain, operational excellence.",
-    "transformation": "Transformation",
-    "transformationDesc": "Digital transformation, M&A integration, organizational change.",
-    "people": "People",
-    "peopleDesc": "Leadership development, talent strategy, culture transformation."
+    "strategicPlanning": "Strategic Planning and Goal Management",
+    "strategicPlanningDesc": "Strategic planning, goal cascade, KPI and OKR framework.",
+    "organizationDesign": "Organization Design and Structural Architecture",
+    "organizationDesignDesc": "Org chart, role clarity, structural architecture.",
+    "performanceManagement": "Performance Management System",
+    "performanceManagementDesc": "Performance indicators, evaluation and improvement processes."
   },
   "methodology": {
     "title": "Methodology",
@@ -186,64 +182,49 @@
       "sustainDesc": "Embed changes and measure outcomes."
     }
   },
-  "strategy": {
-    "title": "Strategy Consulting",
-    "tagline": "Clarify direction. Accelerate growth.",
+  "strategicPlanning": {
+    "title": "Strategic Planning and Goal Management",
+    "tagline": "Clarify your goals. Bring your strategic plan to life.",
     "painPoints": [
-      "Unclear priorities — Too many initiatives, limited focus",
-      "Slow decision-making — Analysis paralysis or reactive firefighting",
-      "Execution gaps — Great plans that never fully land"
+      "Unclear goals — Strategy and operations misaligned",
+      "Scattered priorities — Too many initiatives, limited focus",
+      "Execution gaps — Plans that never fully land"
     ],
     "deliverables": [
-      "Strategic plan with clear objectives and KPIs",
-      "Portfolio prioritization and resource allocation framework",
-      "Executive alignment workshops",
-      "Roadmap for implementation and governance"
+      "Strategic plan and goal cascade",
+      "KPI and OKR framework",
+      "Annual and quarterly goal set",
+      "Monitoring and governance model"
     ]
   },
-  "operations": {
-    "title": "Operations Consulting",
-    "tagline": "Streamline processes. Reduce waste. Improve performance.",
+  "organizationDesign": {
+    "title": "Organization Design and Structural Architecture",
+    "tagline": "Align your structure with your goals.",
     "painPoints": [
-      "Inefficient processes — Red tape, rework, and bottlenecks",
-      "Rising costs — Operational spend growing faster than revenue",
-      "Quality issues — Defects, delays, and customer complaints"
+      "Unclear roles — Who is accountable for what",
+      "Misaligned structure — Organization not fit for growth or strategy",
+      "Bottlenecks — Inefficient decision and authority distribution"
     ],
     "deliverables": [
-      "Process maps and value stream analysis",
-      "Target operating model and improvement roadmap",
-      "Pilot implementation with your team",
-      "Metrics dashboard and governance model"
+      "Org chart and role definitions",
+      "Structural architecture and reporting lines",
+      "Authority matrix and decision rights",
+      "Transition and implementation plan"
     ]
   },
-  "transformation": {
-    "title": "Transformation Consulting",
-    "tagline": "Navigate change. Embed new ways of working.",
+  "performanceManagement": {
+    "title": "Performance Management System",
+    "tagline": "Manage performance for measurable results.",
     "painPoints": [
-      "Resistance to change — People clinging to old ways",
-      "Scope creep — Projects that grow beyond original intent",
-      "Value leakage — Benefits that don't materialize post-go-live"
+      "Lack of measurement — Results not tracked quantitatively",
+      "Weak feedback — Employees unaware of goals",
+      "No improvement cycle — Data not used in decision-making"
     ],
     "deliverables": [
-      "Change impact assessment and stakeholder map",
-      "Communications and training plan",
-      "Integration playbook (for M&A) or transformation roadmap",
-      "Post-implementation review and sustain plan"
-    ]
-  },
-  "people": {
-    "title": "People & Organization Consulting",
-    "tagline": "Build capability. Strengthen culture. Unlock potential.",
-    "painPoints": [
-      "Leadership gaps — Key roles without the right capabilities",
-      "Misaligned culture — Values on the wall don't match behavior",
-      "Talent attrition — Losing your best people to competitors"
-    ],
-    "deliverables": [
-      "Organization design and role clarity",
-      "Leadership development program design",
-      "Culture assessment and action plan",
-      "Talent and succession planning framework"
+      "Performance indicators (KPI) set",
+      "Evaluation and feedback process",
+      "Dashboard and reporting templates",
+      "Improvement cycle and governance"
     ]
   },
   "cta": {

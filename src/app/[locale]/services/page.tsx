@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Briefcase, Layout, TrendingUp, Building2 } from "lucide-react";
+import { Target, Layout, BarChart3 } from "lucide-react";
 import {
   Section,
   IconCard,
@@ -20,10 +20,9 @@ export default async function ServicesPage({
   const cta = t.cta as Record<string, string>;
 
   const SERVICE_CARDS = [
-    { icon: Briefcase, title: srv.strategy, description: srv.strategyDesc, href: "/services/strategy" },
-    { icon: Layout, title: srv.operations, description: srv.operationsDesc, href: "/services/operations" },
-    { icon: TrendingUp, title: srv.transformation, description: srv.transformationDesc, href: "/services/transformation" },
-    { icon: Building2, title: srv.people, description: srv.peopleDesc, href: "/services/people" },
+    { icon: Target, title: srv.strategicPlanning, description: srv.strategicPlanningDesc, href: "/services/strategic-planning" },
+    { icon: Layout, title: srv.organizationDesign, description: srv.organizationDesignDesc, href: "/services/organization-design" },
+    { icon: BarChart3, title: srv.performanceManagement, description: srv.performanceManagementDesc, href: "/services/performance-management" },
   ];
 
   const FRAMEWORK_BLOCKS = [
@@ -46,7 +45,7 @@ export default async function ServicesPage({
         <h2 className="mb-8 text-xl font-semibold text-zinc-900 md:text-2xl">
           {(srv?.serviceAreas as string) ?? ""}
         </h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICE_CARDS.map((item) => (
             <Link key={String(item.title)} href={`/${locale}${item.href}`}>
               <IconCard

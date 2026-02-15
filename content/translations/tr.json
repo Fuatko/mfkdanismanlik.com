@@ -21,14 +21,12 @@
     "ctaTitle": "Başlamaya Hazır mısınız?",
     "ctaDesc": "Stratejik hedeflerinize ulaşmanıza nasıl yardımcı olabileceğimizi konuşalım.",
     "cards": {
-      "strategy": "Strateji",
-      "strategyDesc": "Yönü netleştirin, büyüme için kaynakları hizalayın.",
-      "operations": "Operasyonlar",
-      "operationsDesc": "Süreçleri optimize edin, israfı azaltın.",
-      "transformation": "Dönüşüm",
-      "transformationDesc": "Minimum aksama ile değişimi yönetin.",
-      "people": "İnsan",
-      "peopleDesc": "Yetkinlik oluşturun, kültürü güçlendirin."
+      "strategicPlanning": "Stratejik Planlama ve Hedef Yönetimi",
+      "strategicPlanningDesc": "Hedeflerinizi netleştirin, stratejik planınızı hayata geçirin.",
+      "organizationDesign": "Organizasyon Tasarımı ve Yapısal Mimari",
+      "organizationDesignDesc": "Yapınızı hedeflerinize uyumlu hale getirin.",
+      "performanceManagement": "Performans Yönetim Sistemi",
+      "performanceManagementDesc": "Ölçülebilir sonuçlar için performansı yönetin."
     },
     "steps": {
       "discover": "Keşfet",
@@ -45,7 +43,7 @@
   },
   "services": {
     "title": "Hizmetler",
-    "tagline": "Strateji, operasyonlar ve insan odaklı uçtan uca danışmanlık",
+    "tagline": "Yönetim sistemleri: stratejik planlama, organizasyon tasarımı ve performans yönetimi",
     "serviceAreas": "Hizmet Alanlarımız",
     "framework": "Çerçevemiz",
     "frameworkBlocks": {
@@ -58,14 +56,12 @@
       "sustain": "Sürdürme",
       "sustainDesc": "Yetkinlikleri yerleştirin, sonuçları ölçün."
     },
-    "strategy": "Strateji",
-    "strategyDesc": "Stratejik planlama, portföy optimizasyonu, büyüme stratejisi.",
-    "operations": "Operasyonlar",
-    "operationsDesc": "Süreç iyileştirme, tedarik zinciri, operasyonel mükemmellik.",
-    "transformation": "Dönüşüm",
-    "transformationDesc": "Dijital dönüşüm, M&A entegrasyonu, organizasyonel değişim.",
-    "people": "İnsan",
-    "peopleDesc": "Liderlik geliştirme, yetenek stratejisi, kültür dönüşümü."
+    "strategicPlanning": "Stratejik Planlama ve Hedef Yönetimi",
+    "strategicPlanningDesc": "Stratejik planlama, hedef kaskadı, KPI ve OKR çerçevesi.",
+    "organizationDesign": "Organizasyon Tasarımı ve Yapısal Mimari",
+    "organizationDesignDesc": "Organizasyon şeması, rol netliği, yapısal mimari.",
+    "performanceManagement": "Performans Yönetim Sistemi",
+    "performanceManagementDesc": "Performans göstergeleri, değerlendirme ve iyileştirme süreçleri."
   },
   "methodology": {
     "title": "Metodoloji",
@@ -186,64 +182,49 @@
       "sustainDesc": "Değişiklikleri yerleştirin ve sonuçları ölçün."
     }
   },
-  "strategy": {
-    "title": "Strateji Danışmanlığı",
-    "tagline": "Yönü netleştirin. Büyümeyi hızlandırın.",
+  "strategicPlanning": {
+    "title": "Stratejik Planlama ve Hedef Yönetimi",
+    "tagline": "Hedeflerinizi netleştirin. Stratejik planınızı hayata geçirin.",
     "painPoints": [
-      "Belirsiz öncelikler — Çok fazla girişim, sınırlı odak",
-      "Yavaş karar alma — Analiz felci veya tepkisel yangın söndürme",
-      "Uygulama boşlukları — Tam hayata geçmeyen harika planlar"
+      "Belirsiz hedefler — Strateji ile operasyon uyumsuz",
+      "Dağınık öncelikler — Çok fazla girişim, sınırlı odak",
+      "Uygulama boşlukları — Planlar tam hayata geçmiyor"
     ],
     "deliverables": [
-      "Net hedefler ve KPI'larla stratejik plan",
-      "Portföy önceliklendirme ve kaynak tahsisi çerçevesi",
-      "Üst yönetim hizalama atölyeleri",
-      "Uygulama ve yönetişim için yol haritası"
+      "Stratejik plan ve hedef kaskadı",
+      "KPI ve OKR çerçevesi",
+      "Yıllık ve çeyreklik hedef seti",
+      "İzleme ve yönetişim modeli"
     ]
   },
-  "operations": {
-    "title": "Operasyon Danışmanlığı",
-    "tagline": "Süreçleri optimize edin. İsrafı azaltın. Performansı artırın.",
+  "organizationDesign": {
+    "title": "Organizasyon Tasarımı ve Yapısal Mimari",
+    "tagline": "Yapınızı hedeflerinize uyumlu hale getirin.",
     "painPoints": [
-      "Verimsiz süreçler — Bürokrasi, yeniden iş, darboğazlar",
-      "Yükselen maliyetler — Operasyonel harcamalar gelirden hızlı büyüyor",
-      "Kalite sorunları — Hatalar, gecikmeler, müşteri şikayetleri"
+      "Belirsiz roller — Kim neye karşı sorumlu belli değil",
+      "Uyumsuz yapı — Büyüme veya strateji ile uyumsuz organizasyon",
+      "Darboğazlar — Karar ve yetki dağılımı verimsiz"
     ],
     "deliverables": [
-      "Süreç haritaları ve değer akışı analizi",
-      "Hedef operasyonel model ve iyileştirme yol haritası",
-      "Ekibinizle pilot uygulama",
-      "Metrik paneli ve yönetişim modeli"
+      "Organizasyon şeması ve rol tanımları",
+      "Yapısal mimari ve raporlama çizgileri",
+      "Yetki matrisi ve karar hakları",
+      "Geçiş ve uygulama planı"
     ]
   },
-  "transformation": {
-    "title": "Dönüşüm Danışmanlığı",
-    "tagline": "Değişimi yönetin. Yeni çalışma biçimlerini yerleştirin.",
+  "performanceManagement": {
+    "title": "Performans Yönetim Sistemi",
+    "tagline": "Ölçülebilir sonuçlar için performansı yönetin.",
     "painPoints": [
-      "Değişime direnç — İnsanlar eski yöntemlere tutunuyor",
-      "Kapsam genişlemesi — Orijinal niyetin ötesine büyüyen projeler",
-      "Değer kaybı — Go-live sonrası gerçekleşmeyen faydalar"
+      "Ölçüm eksikliği — Sonuçlar sayısal izlenmiyor",
+      "Geri bildirim zayıf — Çalışanlar hedeflerden habersiz",
+      "İyileştirme döngüsü yok — Veri karar almada kullanılmıyor"
     ],
     "deliverables": [
-      "Değişim etki değerlendirmesi ve paydaş haritası",
-      "İletişim ve eğitim planı",
-      "Entegrasyon oynak defteri (M&A için) veya dönüşüm yol haritası",
-      "Uygulama sonrası inceleme ve sürdürme planı"
-    ]
-  },
-  "people": {
-    "title": "İnsan ve Organizasyon Danışmanlığı",
-    "tagline": "Yetkinlik oluşturun. Kültürü güçlendirin. Potansiyeli açığa çıkarın.",
-    "painPoints": [
-      "Liderlik boşlukları — Kritik rollerde doğru yetkinlikler yok",
-      "Uyumsuz kültür — Duvardaki değerler davranışla örtüşmüyor",
-      "Yetenek kaybı — En iyi insanlarınızı rakiplere kaptırıyorsunuz"
-    ],
-    "deliverables": [
-      "Organizasyon tasarımı ve rol netliği",
-      "Liderlik geliştirme programı tasarımı",
-      "Kültür değerlendirmesi ve eylem planı",
-      "Yetenek ve halef planlama çerçevesi"
+      "Performans göstergeleri (KPI) seti",
+      "Değerlendirme ve geri bildirim süreci",
+      "Dashboard ve raporlama şablonları",
+      "İyileştirme döngüsü ve yönetişim"
     ]
   },
   "cta": {

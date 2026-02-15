@@ -88,16 +88,14 @@ const SECTIONS: Section[] = [
     ],
   },
   {
-    title: "Ana sayfa – Dört kutu (Strateji, Operasyonlar, Dönüşüm, İnsan)",
+    title: "Ana sayfa – Üç kutu (Yönetim Sistemleri: Stratejik Planlama, Organizasyon Tasarımı, Performans)",
     fields: [
-      { path: "home.cards.strategy", label: "1. Kutu başlık (Strateji)" },
-      { path: "home.cards.strategyDesc", label: "1. Kutu açıklama" },
-      { path: "home.cards.operations", label: "2. Kutu başlık (Operasyonlar)" },
-      { path: "home.cards.operationsDesc", label: "2. Kutu açıklama" },
-      { path: "home.cards.transformation", label: "3. Kutu başlık (Dönüşüm)" },
-      { path: "home.cards.transformationDesc", label: "3. Kutu açıklama" },
-      { path: "home.cards.people", label: "4. Kutu başlık (İnsan)" },
-      { path: "home.cards.peopleDesc", label: "4. Kutu açıklama" },
+      { path: "home.cards.strategicPlanning", label: "1. Kutu başlık (Stratejik Planlama ve Hedef Yönetimi)" },
+      { path: "home.cards.strategicPlanningDesc", label: "1. Kutu açıklama" },
+      { path: "home.cards.organizationDesign", label: "2. Kutu başlık (Organizasyon Tasarımı ve Yapısal Mimari)" },
+      { path: "home.cards.organizationDesignDesc", label: "2. Kutu açıklama" },
+      { path: "home.cards.performanceManagement", label: "3. Kutu başlık (Performans Yönetim Sistemi)" },
+      { path: "home.cards.performanceManagementDesc", label: "3. Kutu açıklama" },
     ],
   },
   {
@@ -179,10 +177,21 @@ const SECTIONS: Section[] = [
     ],
   },
   {
-    title: "Diğer sayfa başlıkları",
+    title: "Hizmetler sayfası – Başlık ve üç hizmet kartı",
     fields: [
       { path: "services.title", label: "Hizmetler sayfası başlığı" },
       { path: "services.tagline", label: "Hizmetler sayfası alt başlık" },
+      { path: "services.strategicPlanning", label: "Hizmet 1 başlık (Stratejik Planlama ve Hedef Yönetimi)" },
+      { path: "services.strategicPlanningDesc", label: "Hizmet 1 açıklama" },
+      { path: "services.organizationDesign", label: "Hizmet 2 başlık (Organizasyon Tasarımı ve Yapısal Mimari)" },
+      { path: "services.organizationDesignDesc", label: "Hizmet 2 açıklama" },
+      { path: "services.performanceManagement", label: "Hizmet 3 başlık (Performans Yönetim Sistemi)" },
+      { path: "services.performanceManagementDesc", label: "Hizmet 3 açıklama" },
+    ],
+  },
+  {
+    title: "Diğer sayfa başlıkları",
+    fields: [
       { path: "methodology.title", label: "Metodoloji sayfası başlığı" },
       { path: "methodology.tagline", label: "Metodoloji sayfası alt başlık" },
       { path: "cases.title", label: "Referanslar sayfası başlığı" },

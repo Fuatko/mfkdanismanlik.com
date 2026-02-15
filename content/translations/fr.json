@@ -21,14 +21,12 @@
     "ctaTitle": "Prêt à commencer ?",
     "ctaDesc": "Discutons de la manière dont nous pouvons vous aider à atteindre vos objectifs stratégiques.",
     "cards": {
-      "strategy": "Stratégie",
-      "strategyDesc": "Clarifiez la direction et alignez les ressources pour la croissance.",
-      "operations": "Opérations",
-      "operationsDesc": "Optimisez les processus et réduisez le gaspillage.",
-      "transformation": "Transformation",
-      "transformationDesc": "Pilotez le changement avec un minimum de perturbation.",
-      "people": "Personnes",
-      "peopleDesc": "Développez les capacités et renforcez la culture."
+      "strategicPlanning": "Planification stratégique et gestion des objectifs",
+      "strategicPlanningDesc": "Clarifiez vos objectifs et concrétisez votre plan stratégique.",
+      "organizationDesign": "Conception organisationnelle et architecture structurelle",
+      "organizationDesignDesc": "Alignez votre structure sur vos objectifs.",
+      "performanceManagement": "Système de gestion de la performance",
+      "performanceManagementDesc": "Pilotez la performance pour des résultats mesurables."
     },
     "steps": {
       "discover": "Découvrir",
@@ -45,7 +43,7 @@
   },
   "services": {
     "title": "Services",
-    "tagline": "Conseil de bout en bout en stratégie, opérations et ressources humaines",
+    "tagline": "Systèmes de management : planification stratégique, conception organisationnelle et gestion de la performance",
     "serviceAreas": "Nos domaines de service",
     "framework": "Notre cadre",
     "frameworkBlocks": {
@@ -58,14 +56,12 @@
       "sustain": "Soutenir",
       "sustainDesc": "Ancrez les capacités et mesurez les résultats."
     },
-    "strategy": "Stratégie",
-    "strategyDesc": "Planification stratégique, optimisation de portefeuille, stratégie de croissance.",
-    "operations": "Opérations",
-    "operationsDesc": "Amélioration des processus, chaîne d'approvisionnement, excellence opérationnelle.",
-    "transformation": "Transformation",
-    "transformationDesc": "Transformation digitale, intégration M&A, changement organisationnel.",
-    "people": "Personnes",
-    "peopleDesc": "Développement du leadership, stratégie talents, transformation culturelle."
+    "strategicPlanning": "Planification stratégique et gestion des objectifs",
+    "strategicPlanningDesc": "Planification stratégique, cascade d'objectifs, cadre KPI et OKR.",
+    "organizationDesign": "Conception organisationnelle et architecture structurelle",
+    "organizationDesignDesc": "Organigramme, clarté des rôles, architecture structurelle.",
+    "performanceManagement": "Système de gestion de la performance",
+    "performanceManagementDesc": "Indicateurs de performance, évaluation et processus d'amélioration."
   },
   "methodology": {
     "title": "Méthodologie",
@@ -186,64 +182,49 @@
       "sustainDesc": "Ancrez les changements et mesurez les résultats."
     }
   },
-  "strategy": {
-    "title": "Conseil en stratégie",
-    "tagline": "Clarifiez la direction. Accélérez la croissance.",
+  "strategicPlanning": {
+    "title": "Planification stratégique et gestion des objectifs",
+    "tagline": "Clarifiez vos objectifs. Concrétisez votre plan stratégique.",
     "painPoints": [
-      "Priorités floues — Trop d'initiatives, peu de focus",
-      "Décisions lentes — Paralysie par l'analyse ou réactivité",
-      "Lacunes d'exécution — De bons plans jamais pleinement mis en œuvre"
+      "Objectifs flous — Stratégie et opérations désalignées",
+      "Priorités dispersées — Trop d'initiatives, peu de focus",
+      "Lacunes d'exécution — Les plans ne sont pas pleinement mis en œuvre"
     ],
     "deliverables": [
-      "Plan stratégique avec objectifs et KPI clairs",
-      "Cadre de priorisation de portefeuille et d'allocation des ressources",
-      "Ateliers d'alignement dirigeants",
-      "Feuille de route d'implémentation et de gouvernance"
+      "Plan stratégique et cascade d'objectifs",
+      "Cadre KPI et OKR",
+      "Ensemble d'objectifs annuels et trimestriels",
+      "Modèle de suivi et de gouvernance"
     ]
   },
-  "operations": {
-    "title": "Conseil en opérations",
-    "tagline": "Optimisez les processus. Réduisez le gaspillage. Améliorez les performances.",
+  "organizationDesign": {
+    "title": "Conception organisationnelle et architecture structurelle",
+    "tagline": "Alignez votre structure sur vos objectifs.",
     "painPoints": [
-      "Processus inefficaces — Paperasserie, retravail, goulots d'étranglement",
-      "Coûts en hausse — Dépenses opérationnelles croissant plus vite que les revenus",
-      "Problèmes de qualité — Défauts, retards, plaintes clients"
+      "Rôles flous — Qui est responsable de quoi",
+      "Structure inadaptée — Organisation non alignée avec la croissance ou la stratégie",
+      "Goulots d'étranglement — Répartition inefficace des décisions et des autorités"
     ],
     "deliverables": [
-      "Cartographie des processus et analyse du flux de valeur",
-      "Modèle opérationnel cible et feuille de route d'amélioration",
-      "Implémentation pilote avec votre équipe",
-      "Tableau de bord métriques et modèle de gouvernance"
+      "Organigramme et définitions de rôles",
+      "Architecture structurelle et lignes de reporting",
+      "Matrice d'autorité et droits de décision",
+      "Plan de transition et d'implémentation"
     ]
   },
-  "transformation": {
-    "title": "Conseil en transformation",
-    "tagline": "Pilotez le changement. Ancrez les nouvelles façons de travailler.",
+  "performanceManagement": {
+    "title": "Système de gestion de la performance",
+    "tagline": "Pilotez la performance pour des résultats mesurables.",
     "painPoints": [
-      "Résistance au changement — Les gens s'accrochent aux anciennes méthodes",
-      "Dérive de périmètre — Des projets qui dépassent l'intention initiale",
-      "Fuites de valeur — Des bénéfices qui ne se concrétisent pas après le go-live"
+      "Manque de mesure — Les résultats ne sont pas suivis quantitativement",
+      "Retour d'information faible — Les collaborateurs peu informés des objectifs",
+      "Pas de cycle d'amélioration — Les données peu utilisées dans les décisions"
     ],
     "deliverables": [
-      "Évaluation d'impact du changement et carte des parties prenantes",
-      "Plan de communication et de formation",
-      "Guide d'intégration (M&A) ou feuille de route de transformation",
-      "Revue post-implémentation et plan de soutien"
-    ]
-  },
-  "people": {
-    "title": "Conseil en personnes et organisation",
-    "tagline": "Développez les capacités. Renforcez la culture. Libérez le potentiel.",
-    "painPoints": [
-      "Lacunes en leadership — Des rôles clés sans les bonnes capacités",
-      "Culture incohérente — Les valeurs affichées ne correspondent pas aux comportements",
-      "Attrition des talents — Vous perdez vos meilleurs éléments au profit de la concurrence"
-    ],
-    "deliverables": [
-      "Conception organisationnelle et clarté des rôles",
-      "Conception de programme de développement du leadership",
-      "Évaluation de la culture et plan d'action",
-      "Cadre de planification des talents et de la succession"
+      "Ensemble d'indicateurs de performance (KPI)",
+      "Processus d'évaluation et de retour d'information",
+      "Tableaux de bord et modèles de reporting",
+      "Cycle d'amélioration et gouvernance"
     ]
   },
   "cta": {

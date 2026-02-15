@@ -10,7 +10,12 @@ import { getTranslations } from "@/lib/i18n";
 
 const PAIN_POINT_ICONS = [AlertCircle, Clock, PieChart];
 
-const slugs = ["strategy", "operations", "transformation", "people"] as const;
+const SLUG_TO_KEY: Record<string, string> = {
+  "strategic-planning": "strategicPlanning",
+  "organization-design": "organizationDesign",
+  "performance-management": "performanceManagement",
+};
+const slugs = ["strategic-planning", "organization-design", "performance-management"] as const;
 
 export function generateStaticParams() {
   return slugs.flatMap((slug) =>
@@ -29,7 +34,8 @@ export default async function ServicePage({
   const t = await getTranslations(locale as "tr" | "en" | "fr");
   const detail = t.serviceDetail as Record<string, unknown>;
   const steps = (detail?.steps as Record<string, string>) ?? {};
-  const serviceData = t[slug as keyof typeof t] as Record<string, unknown> | undefined;
+  const key = SLUG_TO_KEY[slug];
+  const serviceData = key ? (t as Record<string, unknown>)[key] as Record<string, unknown> | undefined : undefined;
   const cta = t.cta as Record<string, string>;
 
   if (!serviceData) notFound();

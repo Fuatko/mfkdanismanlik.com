@@ -268,6 +268,13 @@ export function AdminPanel() {
 
   const saveContent = useCallback(async () => {
     setMessage(null);
+    if (!password?.trim()) {
+      setMessage({
+        type: "err",
+        text: "Lütfen önce 'Kaydetmek için şifre' kutusuna Vercel'de tanımladığınız ADMIN_SECRET şifresini yazın.",
+      });
+      return;
+    }
     setSaving(true);
     try {
       const res = await fetch(`/api/content?locale=${locale}`);
@@ -280,12 +287,19 @@ export function AdminPanel() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-Admin-Secret": password,
+          "X-Admin-Secret": password.trim(),
         },
         body: JSON.stringify({ locale, content }),
       });
-      const data = await saveRes.json();
-      if (!saveRes.ok) throw new Error(data.error || "Kayıt başarısız");
+      const data = (await saveRes.json()) as { error?: string };
+      if (!saveRes.ok) {
+        const msg = data.error || "Kayıt başarısız";
+        const hint =
+          saveRes.status === 401
+            ? " Vercel → Proje → Settings → Environment Variables → ADMIN_SECRET değerini kontrol edin, sonra Redeploy yapın."
+            : "";
+        throw new Error(msg + hint);
+      }
       setMessage({ type: "ok", text: "Kaydedildi. Siteyi yenileyerek görebilirsiniz." });
     } catch (e) {
       setMessage({ type: "err", text: e instanceof Error ? e.message : "Kayıt hatası" });

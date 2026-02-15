@@ -6,8 +6,6 @@ import { supabase } from "./supabase";
 export { locales, defaultLocale, localeNames, isValidLocale } from "./i18n-constants";
 export type { Locale } from "./i18n-constants";
 
-const translationsCache: Partial<Record<Locale, Record<string, unknown>>> = {};
-
 function getContentFromFile(locale: Locale): Record<string, unknown> {
   const filePath = path.join(process.cwd(), "content", "translations", `${locale}.json`);
   const raw = fs.readFileSync(filePath, "utf-8");
@@ -15,18 +13,13 @@ function getContentFromFile(locale: Locale): Record<string, unknown> {
 }
 
 export async function getTranslations(locale: Locale): Promise<Record<string, unknown>> {
-  if (translationsCache[locale]) return translationsCache[locale];
   if (supabase) {
     const { data } = await supabase.from("site_content").select("content").eq("locale", locale).single();
     if (data?.content && typeof data.content === "object") {
-      const content = data.content as Record<string, unknown>;
-      translationsCache[locale] = content;
-      return content;
+      return data.content as Record<string, unknown>;
     }
   }
-  const data = getContentFromFile(locale);
-  translationsCache[locale] = data;
-  return data;
+  return getContentFromFile(locale);
 }
 
 export function t(

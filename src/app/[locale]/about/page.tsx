@@ -30,7 +30,7 @@ export default async function AboutPage({
           size="mini"
           imageUrl={aboutImageUrl}
           imageAlt="Hakkımızda"
-          imagePosition="top"
+          imagePosition="centerUpper"
         />
       </Section>
       <Section>

@@ -7,8 +7,8 @@ interface HeroPlaceholderProps {
   size?: "full" | "mini";
   imageUrl?: string;
   imageAlt?: string;
-  /** Resmin çerçeve içinde hizası: "top" = üst kısım görünsün, "center" = ortası */
-  imagePosition?: "top" | "center";
+  /** Resmin çerçeve içinde hizası: "top" = üst, "center" = tam orta, "centerUpper" = ortanın biraz üstü (örn. BUSINESS yazısı) */
+  imagePosition?: "top" | "center" | "centerUpper";
 }
 
 export function HeroPlaceholder({ 
@@ -21,7 +21,12 @@ export function HeroPlaceholder({
   imagePosition = "center"
 }: HeroPlaceholderProps) {
   const isMini = size === "mini";
-  const objectPos = imagePosition === "top" ? "object-top" : "object-center";
+  const objectPos =
+    imagePosition === "top"
+      ? "object-top"
+      : imagePosition === "centerUpper"
+        ? "object-[center_35%]"
+        : "object-center";
 
   return (
     <div

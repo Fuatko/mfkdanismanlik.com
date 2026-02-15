@@ -1,5 +1,5 @@
 import { Shield, Award, Users, Target } from "lucide-react";
-import { Section, IconCard, CTABox } from "@/components";
+import { Section, IconCard, CTABox, HeroPlaceholder } from "@/components";
 import { getTranslations } from "@/lib/i18n";
 
 export default async function AboutPage({
@@ -12,6 +12,7 @@ export default async function AboutPage({
   const a = t.about as Record<string, unknown>;
   const vals = (a?.valuesList as Record<string, string>) ?? {};
   const cta = t.cta as Record<string, string>;
+  const aboutImageUrl = ((t as Record<string, unknown>).images as Record<string, string>)?.aboutTeam;
 
   const VALUES = [
     { icon: Shield, title: vals.integrity, description: vals.integrityDesc },
@@ -22,13 +23,16 @@ export default async function AboutPage({
 
   return (
     <>
+      <Section className="pb-8 md:pb-12">
+        <HeroPlaceholder
+          title={(a?.title as string) ?? "About Us"}
+          tagline={(a?.tagline as string) ?? ""}
+          size="mini"
+          imageUrl={aboutImageUrl}
+          imageAlt="Hakkımızda"
+        />
+      </Section>
       <Section>
-        <h1 className="mb-4 text-3xl font-semibold text-zinc-900 md:text-4xl">
-          {(a?.title as string) ?? "About Us"}
-        </h1>
-        <p className="mb-12 max-w-2xl text-lg text-zinc-600">
-          {(a?.tagline as string) ?? ""}
-        </p>
 
         <h2 className="mb-6 text-xl font-semibold text-zinc-900 md:text-2xl">
           {(a?.whoWeAre as string) ?? ""}

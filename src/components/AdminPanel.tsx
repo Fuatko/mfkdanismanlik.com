@@ -40,15 +40,15 @@ function clone(obj: Record<string, unknown>): Record<string, unknown> {
   return JSON.parse(JSON.stringify(obj));
 }
 
-type Field = { path: string; label: string; placeholder?: string };
+type Field = { path: string; label: string; placeholder?: string; isImage?: boolean };
 type Section = { title: string; fields: Field[] };
 
 const SECTIONS: Section[] = [
   {
     title: "Resimler",
     fields: [
-      { path: "images.hero", label: "Ana sayfa üst banner resmi", placeholder: "Örn: /images/hero.jpg (boş bırakırsanız resim gösterilmez)" },
-      { path: "images.aboutTeam", label: "Hakkımızda sayfası resmi", placeholder: "Örn: /images/ekip.jpg" },
+      { path: "images.hero", label: "Ana sayfa üst banner resmi", isImage: true },
+      { path: "images.aboutTeam", label: "Hakkımızda sayfası resmi", isImage: true },
     ],
   },
   {
@@ -200,6 +200,8 @@ export function AdminPanel() {
   const [message, setMessage] = useState<{ type: "ok" | "err"; text: string } | null>(null);
   const [loaded, setLoaded] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [imageList, setImageList] = useState<string[]>([]);
+  const [showCustomPath, setShowCustomPath] = useState<Record<string, boolean>>({});
 
   const loadContent = useCallback(async () => {
     setMessage(null);
@@ -215,6 +217,11 @@ export function AdminPanel() {
       }
       setFormData(flat);
       setLoaded(true);
+      const imgRes = await fetch("/api/images");
+      if (imgRes.ok) {
+        const list = (await imgRes.json()) as string[];
+        setImageList(list);
+      }
     } catch (e) {
       setMessage({ type: "err", text: e instanceof Error ? e.message : "Hata oluştu" });
     }
@@ -329,13 +336,58 @@ export function AdminPanel() {
                 {section.fields.map((field) => (
                   <label key={field.path} className="block">
                     <span className="mb-1 block text-sm font-medium text-zinc-600">{field.label}</span>
-                    <input
-                      type="text"
-                      value={formData[field.path] ?? ""}
-                      onChange={(e) => setField(field.path, e.target.value)}
-                      placeholder={field.placeholder}
-                      className="w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm text-zinc-900"
-                    />
+                    {field.isImage ? (
+                      <div className="space-y-2">
+                        <select
+                          value={
+                            imageList.includes(formData[field.path] ?? "")
+                              ? (formData[field.path] ?? "")
+                              : "__custom__"
+                          }
+                          onChange={(e) => {
+                            const v = e.target.value;
+                            setField(field.path, v === "__custom__" ? (formData[field.path] ?? "") : v);
+                            setShowCustomPath((p) => ({ ...p, [field.path]: v === "__custom__" }));
+                          }}
+                          className="w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm text-zinc-900"
+                        >
+                          <option value="">Resim yok</option>
+                          {imageList.map((path) => (
+                            <option key={path} value={path}>
+                              {path}
+                            </option>
+                          ))}
+                          <option value="__custom__">—— Özel yol yaz ——</option>
+                        </select>
+                        {(showCustomPath[field.path] ||
+                          (formData[field.path] && !imageList.includes(formData[field.path]))) && (
+                          <input
+                            type="text"
+                            value={formData[field.path] ?? ""}
+                            onChange={(e) => setField(field.path, e.target.value)}
+                            placeholder="/images/dosya.jpg"
+                            className="w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm text-zinc-900"
+                          />
+                        )}
+                        {!showCustomPath[field.path] && (!formData[field.path] || imageList.includes(formData[field.path] ?? "")) && (
+                          <button
+                            type="button"
+                            onClick={() => setShowCustomPath((p) => ({ ...p, [field.path]: true }))}
+                            className="text-xs text-zinc-500 underline hover:text-zinc-700"
+                          >
+                            Veya özel yol yaz
+                          </button>
+                        )}
+                      </div>
+                    ) : (
+                      <input
+                        type="text"
+                        value={formData[field.path] ?? ""}
+                        onChange={(e) => setField(field.path, e.target.value)}
+                        placeholder={field.placeholder}
+                        className="w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm text-zinc-900"
+                      />
+                    )}
                   </label>
                 ))}
               </div>

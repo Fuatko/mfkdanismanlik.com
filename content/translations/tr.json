@@ -150,6 +150,7 @@
     "phoneValue": "+90 (555) 123 45 67",
     "address": "Adres",
     "addressValue": "İstanbul, Türkiye",
+    "mapsUrl": "https://maps.app.goo.gl/Lh5Eja4moXgR8Rex5",
     "expect": "Beklenen Süre",
     "expectText": "Genellikle bir iş günü içinde yanıt veriyoruz. Acil sorular için lütfen doğrudan arayın.",
     "sendMessage": "Mesaj Gönderin",

@@ -30,6 +30,7 @@ export function Footer({ locale, translations }: FooterProps) {
   const emailValue = contact.emailValue ?? "";
   const phoneValue = contact.phoneValue ?? "";
   const addressValue = contact.addressValue ?? "";
+  const mapsUrl = contact.mapsUrl ?? "";
 
   return (
     <footer className="border-t border-zinc-200/80 bg-zinc-50/50">
@@ -82,7 +83,18 @@ export function Footer({ locale, translations }: FooterProps) {
               {addressValue && (
                 <li className="flex items-center gap-2">
                   <MapPin size={14} className="shrink-0" />
-                  <span>{addressValue}</span>
+                  {mapsUrl ? (
+                    <a
+                      href={mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-zinc-900 hover:underline"
+                    >
+                      {addressValue}
+                    </a>
+                  ) : (
+                    <span>{addressValue}</span>
+                  )}
                 </li>
               )}
             </ul>

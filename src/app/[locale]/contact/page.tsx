@@ -71,7 +71,18 @@ export default async function ContactPage({
                 </div>
                 <div>
                   <p className="font-medium text-zinc-900">{c?.address ?? "Address"}</p>
-                  <p className="text-sm text-zinc-600">{c?.addressValue ?? ""}</p>
+                  {c?.mapsUrl ? (
+                    <a
+                      href={c.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-zinc-600 hover:text-zinc-900 hover:underline"
+                    >
+                      {c?.addressValue ?? ""}
+                    </a>
+                  ) : (
+                    <p className="text-sm text-zinc-600">{c?.addressValue ?? ""}</p>
+                  )}
                 </div>
               </li>
             </ul>

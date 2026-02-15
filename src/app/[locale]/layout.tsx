@@ -2,6 +2,10 @@ import { notFound } from "next/navigation";
 import { Header, Footer, LocaleHtml } from "@/components";
 import { locales, isValidLocale, getTranslations } from "@/lib/i18n";
 
+// Panelden kaydedilen içerik hemen görünsün; sayfa önbelleğe alınmasın
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }

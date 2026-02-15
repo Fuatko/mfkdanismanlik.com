@@ -150,6 +150,7 @@
     "phoneValue": "+90 (555) 123 45 67",
     "address": "Address",
     "addressValue": "Istanbul, Turkey",
+    "mapsUrl": "https://maps.app.goo.gl/Lh5Eja4moXgR8Rex5",
     "expect": "What to Expect",
     "expectText": "We typically respond within one business day. For urgent inquiries, please call directly.",
     "sendMessage": "Send a Message",

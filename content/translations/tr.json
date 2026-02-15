@@ -22,11 +22,15 @@
     "ctaDesc": "Stratejik hedeflerinize ulaşmanıza nasıl yardımcı olabileceğimizi konuşalım.",
     "cards": {
       "strategicPlanning": "Stratejik Planlama ve Hedef Yönetimi",
-      "strategicPlanningDesc": "Hedeflerinizi netleştirin, stratejik planınızı hayata geçirin.",
+      "strategicPlanningDesc": "Net hedefler, ölçülebilir göstergeler ve tüm organizasyona yayılan bir yön duygusu.",
       "organizationDesign": "Organizasyon Tasarımı ve Yapısal Mimari",
-      "organizationDesignDesc": "Yapınızı hedeflerinize uyumlu hale getirin.",
+      "organizationDesignDesc": "Doğru yapı içinde net roller; belirsizlik azalır, koordinasyon artar.",
       "performanceManagement": "Performans Yönetim Sistemi",
-      "performanceManagementDesc": "Ölçülebilir sonuçlar için performansı yönetin."
+      "performanceManagementDesc": "Ölçülmeyen performans gelişmez; sistematik performans yapısı kurarız.",
+      "humanResources": "İnsan Kaynakları ve Yetkinlik Mimarisi",
+      "humanResourcesDesc": "İnsan kaynağı stratejik sermayedir; doğru insan, doğru rol, doğru sistem.",
+      "executiveDashboard": "Üst Yönetim Dashboard ve Raporlama",
+      "executiveDashboardDesc": "Organizasyonu anlık, net ve veriye dayalı görün; karar netliği."
     },
     "steps": {
       "discover": "Keşfet",
@@ -43,7 +47,7 @@
   },
   "services": {
     "title": "Hizmetler",
-    "tagline": "Yönetim sistemleri: stratejik planlama, organizasyon tasarımı ve performans yönetimi",
+    "tagline": "Kurumsal hedeflerin sürdürülebilir gerçekleşmesi; doğru yapı, net roller ve ölçülebilir performans sistemleri ile mümkündür. Stratejiden günlük operasyonlara bütünsel mimari.",
     "serviceAreas": "Hizmet Alanlarımız",
     "framework": "Çerçevemiz",
     "frameworkBlocks": {
@@ -57,11 +61,15 @@
       "sustainDesc": "Yetkinlikleri yerleştirin, sonuçları ölçün."
     },
     "strategicPlanning": "Stratejik Planlama ve Hedef Yönetimi",
-    "strategicPlanningDesc": "Stratejik planlama, hedef kaskadı, KPI ve OKR çerçevesi.",
+    "strategicPlanningDesc": "Vizyon-misyon, 3-5 yıllık yol haritası, KPI ve üst yönetim hedef sistemi.",
     "organizationDesign": "Organizasyon Tasarımı ve Yapısal Mimari",
-    "organizationDesignDesc": "Organizasyon şeması, rol netliği, yapısal mimari.",
+    "organizationDesignDesc": "Mevcut yapı analizi, rol-sorumluluk, yetki matrisi, iş tanım kartları.",
     "performanceManagement": "Performans Yönetim Sistemi",
-    "performanceManagementDesc": "Performans göstergeleri, değerlendirme ve iyileştirme süreçleri."
+    "performanceManagementDesc": "KPI ölçüm modeli, 360° değerlendirme, raporlama ve geri bildirim mekanizması.",
+    "humanResources": "İnsan Kaynakları ve Yetkinlik Mimarisi",
+    "humanResourcesDesc": "Pozisyon bazlı yetkinlik modelleri, işe alım kriterleri, kariyer-terfi haritası, yönetici gelişim.",
+    "executiveDashboard": "Üst Yönetim Dashboard ve Raporlama",
+    "executiveDashboardDesc": "Finansal ve operasyonel göstergeler tek ekranda; departman performansı, hedef takibi, karar destek."
   },
   "methodology": {
     "title": "Metodoloji",
@@ -184,47 +192,77 @@
   },
   "strategicPlanning": {
     "title": "Stratejik Planlama ve Hedef Yönetimi",
-    "tagline": "Hedeflerinizi netleştirin. Stratejik planınızı hayata geçirin.",
+    "tagline": "Kurumsal başarı tesadüf değildir. Net hedefler, ölçülebilir göstergeler ve tüm organizasyona yayılan bir yön duygusu gerektirir. Amacımız yalnızca plan üretmek değil, stratejinin sahada uygulanmasını sağlamaktır.",
     "painPoints": [
-      "Belirsiz hedefler — Strateji ile operasyon uyumsuz",
-      "Dağınık öncelikler — Çok fazla girişim, sınırlı odak",
-      "Uygulama boşlukları — Planlar tam hayata geçmiyor"
+      "Strateji ile operasyon uyumsuz — Planlar sahada hayat bulmuyor",
+      "Ölçülebilir hedefler yok — Üst yönetim izleme yapamıyor",
+      "Dağınık öncelikler — 3-5 yıllık net yol haritası eksik"
     ],
     "deliverables": [
-      "Stratejik plan ve hedef kaskadı",
-      "KPI ve OKR çerçevesi",
-      "Yıllık ve çeyreklik hedef seti",
-      "İzleme ve yönetişim modeli"
+      "Kurumunuzun vizyon ve misyonunun netleştirilmesi",
+      "3-5 yıllık stratejik yol haritasının oluşturulması",
+      "KPI ve performans göstergelerinin yapılandırılması",
+      "Üst yönetim için izlenebilir hedef sistemi"
     ]
   },
   "organizationDesign": {
     "title": "Organizasyon Tasarımı ve Yapısal Mimari",
-    "tagline": "Yapınızı hedeflerinize uyumlu hale getirin.",
+    "tagline": "Başarıyı insanlar üretir; ancak doğru yapı içinde. Organizasyonun netliği, performansın temelidir. Sonuç olarak belirsizlik azalır, koordinasyon artar ve yönetim şeffaflaşır.",
     "painPoints": [
-      "Belirsiz roller — Kim neye karşı sorumlu belli değil",
-      "Uyumsuz yapı — Büyüme veya strateji ile uyumsuz organizasyon",
-      "Darboğazlar — Karar ve yetki dağılımı verimsiz"
+      "Rol ve sorumluluklar belirsiz — Kim neye karşı sorumlu belli değil",
+      "Yetki ve raporlama karmaşık — Karar süreçleri yavaş",
+      "İş tanımları güncel değil — Görev sınırları net değil"
     ],
     "deliverables": [
-      "Organizasyon şeması ve rol tanımları",
-      "Yapısal mimari ve raporlama çizgileri",
-      "Yetki matrisi ve karar hakları",
-      "Geçiş ve uygulama planı"
+      "Mevcut organizasyon yapısının analizi",
+      "Rol ve sorumlulukların netleştirilmesi",
+      "Yetki matrisi ve raporlama sisteminin kurgulanması",
+      "İş tanım kartları ve görev sınırlarının oluşturulması"
     ]
   },
   "performanceManagement": {
     "title": "Performans Yönetim Sistemi",
-    "tagline": "Ölçülebilir sonuçlar için performansı yönetin.",
+    "tagline": "Ölçülmeyen performans gelişmez. Kurumsal büyüme için sistematik bir performans yapısı gereklidir. Amacımız çalışanı denetlemek değil; gelişimini sistematik şekilde yönetmektir.",
     "painPoints": [
-      "Ölçüm eksikliği — Sonuçlar sayısal izlenmiyor",
-      "Geri bildirim zayıf — Çalışanlar hedeflerden habersiz",
-      "İyileştirme döngüsü yok — Veri karar almada kullanılmıyor"
+      "Performans sayısal izlenmiyor — KPI ve ölçüm modeli zayıf",
+      "Geri bildirim düzensiz — 360° değerlendirme yok",
+      "Raporlama dağınık — Yönetim karar için veri kullanamıyor"
     ],
     "deliverables": [
-      "Performans göstergeleri (KPI) seti",
-      "Değerlendirme ve geri bildirim süreci",
-      "Dashboard ve raporlama şablonları",
-      "İyileştirme döngüsü ve yönetişim"
+      "KPI bazlı ölçüm modelinin kurulması",
+      "360° değerlendirme sisteminin yapılandırılması",
+      "Yetkinlik ve sonuç odaklı performans kriterlerinin belirlenmesi",
+      "Yönetim için düzenli raporlama ve geri bildirim mekanizması"
+    ]
+  },
+  "humanResources": {
+    "title": "İnsan Kaynakları ve Yetkinlik Mimarisi",
+    "tagline": "İnsan kaynağı maliyet değil, stratejik sermayedir. Doğru insan, doğru rol ve doğru sistem bir araya geldiğinde sürdürülebilir büyüme mümkün olur.",
+    "painPoints": [
+      "Yetkinlik modelleri eksik — Pozisyonlar net tanımlı değil",
+      "İşe alım kriterleri öznel — Sistematik süreç yok",
+      "Kariyer ve terfi belirsiz — Yönetici gelişim planı yok"
+    ],
+    "deliverables": [
+      "Pozisyon bazlı yetkinlik modellerinin tasarımı",
+      "İşe alım kriterlerinin sistematik hale getirilmesi",
+      "Kariyer ve terfi haritalarının oluşturulması",
+      "Yönetici gelişim planlarının yapılandırılması"
+    ]
+  },
+  "executiveDashboard": {
+    "title": "Üst Yönetim Dashboard ve Yönetim Raporlama Sistemleri",
+    "tagline": "Üst yönetim organizasyonu anlık, net ve veriye dayalı olarak görebilmelidir. Doğru raporlama sistemi, doğru kararın temelidir. Veri karmaşasını, karar netliğine dönüştürürüz.",
+    "painPoints": [
+      "Göstergeler dağınık — Tek ekranda özet yok",
+      "Departman performansı ölçülemiyor — Hedef gerçekleşme oranı belirsiz",
+      "Yönetim toplantıları veriye dayalı değil — Karar destek altyapısı zayıf"
+    ],
+    "deliverables": [
+      "Finansal ve operasyonel göstergelerin tek ekranda toplanması",
+      "Departman performanslarının ölçülebilir hale getirilmesi",
+      "Stratejik hedeflerin gerçekleşme oranının izlenebilir kılınması",
+      "Yönetim toplantıları için karar destek altyapısının kurulması"
     ]
   },
   "cta": {

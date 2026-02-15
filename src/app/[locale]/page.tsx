@@ -1,4 +1,4 @@
-import { Target, Layout, BarChart3 } from "lucide-react";
+import { Target, Layout, BarChart3, Users, LayoutDashboard } from "lucide-react";
 import {
   Section,
   IconCard,
@@ -24,6 +24,8 @@ export default async function HomePage({
     { icon: Target, title: cards.strategicPlanning, description: cards.strategicPlanningDesc },
     { icon: Layout, title: cards.organizationDesign, description: cards.organizationDesignDesc },
     { icon: BarChart3, title: cards.performanceManagement, description: cards.performanceManagementDesc },
+    { icon: Users, title: cards.humanResources, description: cards.humanResourcesDesc },
+    { icon: LayoutDashboard, title: cards.executiveDashboard, description: cards.executiveDashboardDesc },
   ];
 
   const STEPS = [
@@ -51,7 +53,7 @@ export default async function HomePage({
         <h2 className="mb-10 text-2xl font-semibold text-zinc-900 md:text-3xl">
           {(home?.whyUs as string) ?? ""}
         </h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {HOME_ICON_CARDS.map((item) => (
             <IconCard
               key={item.title}

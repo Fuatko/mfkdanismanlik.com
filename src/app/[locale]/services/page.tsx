@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Target, Layout, BarChart3 } from "lucide-react";
+import { Target, Layout, BarChart3, Users, LayoutDashboard } from "lucide-react";
 import {
   Section,
   IconCard,
@@ -23,6 +23,8 @@ export default async function ServicesPage({
     { icon: Target, title: srv.strategicPlanning, description: srv.strategicPlanningDesc, href: "/services/strategic-planning" },
     { icon: Layout, title: srv.organizationDesign, description: srv.organizationDesignDesc, href: "/services/organization-design" },
     { icon: BarChart3, title: srv.performanceManagement, description: srv.performanceManagementDesc, href: "/services/performance-management" },
+    { icon: Users, title: srv.humanResources, description: srv.humanResourcesDesc, href: "/services/human-resources" },
+    { icon: LayoutDashboard, title: srv.executiveDashboard, description: srv.executiveDashboardDesc, href: "/services/executive-dashboard" },
   ];
 
   const FRAMEWORK_BLOCKS = [
@@ -45,7 +47,7 @@ export default async function ServicesPage({
         <h2 className="mb-8 text-xl font-semibold text-zinc-900 md:text-2xl">
           {(srv?.serviceAreas as string) ?? ""}
         </h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {SERVICE_CARDS.map((item) => (
             <Link key={String(item.title)} href={`/${locale}${item.href}`}>
               <IconCard

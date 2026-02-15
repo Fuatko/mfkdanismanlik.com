@@ -22,11 +22,15 @@
     "ctaDesc": "Discutons de la manière dont nous pouvons vous aider à atteindre vos objectifs stratégiques.",
     "cards": {
       "strategicPlanning": "Planification stratégique et gestion des objectifs",
-      "strategicPlanningDesc": "Clarifiez vos objectifs et concrétisez votre plan stratégique.",
+      "strategicPlanningDesc": "Objectifs clairs, indicateurs mesurables et sens de la direction pour toute l'organisation.",
       "organizationDesign": "Conception organisationnelle et architecture structurelle",
-      "organizationDesignDesc": "Alignez votre structure sur vos objectifs.",
+      "organizationDesignDesc": "Rôles clairs dans la bonne structure ; moins d'ambiguïté, meilleure coordination.",
       "performanceManagement": "Système de gestion de la performance",
-      "performanceManagementDesc": "Pilotez la performance pour des résultats mesurables."
+      "performanceManagementDesc": "Ce qui est mesuré s'améliore ; nous construisons une structure de performance systématique.",
+      "humanResources": "Ressources humaines et architecture des compétences",
+      "humanResourcesDesc": "Les personnes sont un capital stratégique ; les bonnes personnes, rôles et systèmes permettent une croissance durable.",
+      "executiveDashboard": "Dashboard direction et reporting de gestion",
+      "executiveDashboardDesc": "Voir l'organisation en temps réel, clairement et basé sur les données ; clarté décisionnelle."
     },
     "steps": {
       "discover": "Découvrir",
@@ -43,7 +47,7 @@
   },
   "services": {
     "title": "Services",
-    "tagline": "Systèmes de management : planification stratégique, conception organisationnelle et gestion de la performance",
+    "tagline": "La réalisation durable des objectifs organisationnels est possible avec la bonne structure, des rôles clairs et des systèmes de performance mesurables. Nous visons une architecture intégrée de la stratégie aux opérations quotidiennes.",
     "serviceAreas": "Nos domaines de service",
     "framework": "Notre cadre",
     "frameworkBlocks": {
@@ -57,11 +61,15 @@
       "sustainDesc": "Ancrez les capacités et mesurez les résultats."
     },
     "strategicPlanning": "Planification stratégique et gestion des objectifs",
-    "strategicPlanningDesc": "Planification stratégique, cascade d'objectifs, cadre KPI et OKR.",
+    "strategicPlanningDesc": "Vision-mission, feuille de route 3-5 ans, KPI et système d'objectifs direction.",
     "organizationDesign": "Conception organisationnelle et architecture structurelle",
-    "organizationDesignDesc": "Organigramme, clarté des rôles, architecture structurelle.",
+    "organizationDesignDesc": "Analyse de la structure actuelle, rôles et responsabilités, matrice d'autorité, fiches de poste.",
     "performanceManagement": "Système de gestion de la performance",
-    "performanceManagementDesc": "Indicateurs de performance, évaluation et processus d'amélioration."
+    "performanceManagementDesc": "Modèle de mesure KPI, évaluation 360°, reporting et mécanismes de feedback.",
+    "humanResources": "Ressources humaines et architecture des compétences",
+    "humanResourcesDesc": "Modèles de compétences par poste, critères de recrutement, cartographie carrière et promotion, développement des managers.",
+    "executiveDashboard": "Dashboard direction et reporting",
+    "executiveDashboardDesc": "Indicateurs financiers et opérationnels sur un écran ; performance départements, suivi des objectifs, aide à la décision."
   },
   "methodology": {
     "title": "Méthodologie",
@@ -184,47 +192,77 @@
   },
   "strategicPlanning": {
     "title": "Planification stratégique et gestion des objectifs",
-    "tagline": "Clarifiez vos objectifs. Concrétisez votre plan stratégique.",
+    "tagline": "Le succès organisationnel n'est pas le fruit du hasard. Il exige des objectifs clairs, des indicateurs mesurables et un sens de la direction pour toute l'organisation. Notre but n'est pas seulement de produire des plans mais de faire appliquer la stratégie sur le terrain.",
     "painPoints": [
-      "Objectifs flous — Stratégie et opérations désalignées",
-      "Priorités dispersées — Trop d'initiatives, peu de focus",
-      "Lacunes d'exécution — Les plans ne sont pas pleinement mis en œuvre"
+      "Stratégie et opérations désalignées — Les plans ne prennent pas vie sur le terrain",
+      "Pas d'objectifs mesurables — La direction ne peut pas suivre",
+      "Priorités dispersées — Pas de feuille de route 3-5 ans claire"
     ],
     "deliverables": [
-      "Plan stratégique et cascade d'objectifs",
-      "Cadre KPI et OKR",
-      "Ensemble d'objectifs annuels et trimestriels",
-      "Modèle de suivi et de gouvernance"
+      "Clarification de la vision et de la mission",
+      "Élaboration d'une feuille de route stratégique 3-5 ans",
+      "Structuration des KPI et indicateurs de performance",
+      "Système d'objectifs traçable pour la direction"
     ]
   },
   "organizationDesign": {
     "title": "Conception organisationnelle et architecture structurelle",
-    "tagline": "Alignez votre structure sur vos objectifs.",
+    "tagline": "Les personnes font le succès—mais dans la bonne structure. La clarté organisationnelle est le fondement de la performance. Résultat : moins d'ambiguïté, plus de coordination, management transparent.",
     "painPoints": [
-      "Rôles flous — Qui est responsable de quoi",
-      "Structure inadaptée — Organisation non alignée avec la croissance ou la stratégie",
-      "Goulots d'étranglement — Répartition inefficace des décisions et des autorités"
+      "Rôles et responsabilités flous — Qui est responsable de quoi",
+      "Autorité et reporting complexes — Décisions lentes",
+      "Fiches de poste obsolètes — Périmètres de tâches flous"
     ],
     "deliverables": [
-      "Organigramme et définitions de rôles",
-      "Architecture structurelle et lignes de reporting",
-      "Matrice d'autorité et droits de décision",
-      "Plan de transition et d'implémentation"
+      "Analyse de la structure organisationnelle actuelle",
+      "Clarification des rôles et responsabilités",
+      "Matrice d'autorité et système de reporting",
+      "Fiches de poste et périmètres de tâches"
     ]
   },
   "performanceManagement": {
     "title": "Système de gestion de la performance",
-    "tagline": "Pilotez la performance pour des résultats mesurables.",
+    "tagline": "Ce qui est mesuré s'améliore. Une structure de performance systématique est essentielle pour la croissance. Notre but n'est pas de contrôler les collaborateurs mais de gérer leur développement de façon systématique.",
     "painPoints": [
-      "Manque de mesure — Les résultats ne sont pas suivis quantitativement",
-      "Retour d'information faible — Les collaborateurs peu informés des objectifs",
-      "Pas de cycle d'amélioration — Les données peu utilisées dans les décisions"
+      "Performance non suivie quantitativement — Modèle KPI faible",
+      "Retour d'information irrégulier — Pas d'évaluation 360°",
+      "Reporting fragmenté — La direction ne peut pas s'appuyer sur les données"
     ],
     "deliverables": [
-      "Ensemble d'indicateurs de performance (KPI)",
-      "Processus d'évaluation et de retour d'information",
-      "Tableaux de bord et modèles de reporting",
-      "Cycle d'amélioration et gouvernance"
+      "Modèle de mesure basé sur les KPI",
+      "Système d'évaluation 360°",
+      "Critères de performance compétences et résultats",
+      "Reporting régulier et mécanisme de feedback pour la direction"
+    ]
+  },
+  "humanResources": {
+    "title": "Ressources humaines et architecture des compétences",
+    "tagline": "Les personnes ne sont pas un coût mais un capital stratégique. La croissance durable est possible lorsque les bonnes personnes, les bons rôles et les bons systèmes sont réunis.",
+    "painPoints": [
+      "Modèles de compétences manquants — Postes mal définis",
+      "Critères de recrutement subjectifs — Pas de processus systématique",
+      "Carrière et promotion floues — Pas de plan de développement des managers"
+    ],
+    "deliverables": [
+      "Conception de modèles de compétences par poste",
+      "Critères de recrutement systématisés",
+      "Cartographie carrière et promotion",
+      "Plans de développement des managers structurés"
+    ]
+  },
+  "executiveDashboard": {
+    "title": "Dashboard direction et systèmes de reporting de gestion",
+    "tagline": "La direction doit voir l'organisation en temps réel, clairement et sur la base des données. Le bon système de reporting est la base des bonnes décisions. Nous transformons la complexité des données en clarté décisionnelle.",
+    "painPoints": [
+      "Indicateurs dispersés — Pas de vue d'ensemble sur un écran",
+      "Performance des départements non mesurable — Taux de réalisation des objectifs flou",
+      "Réunions de direction peu basées sur les données — Aide à la décision faible"
+    ],
+    "deliverables": [
+      "Indicateurs financiers et opérationnels sur un écran",
+      "Performance départementale mesurable",
+      "Taux de réalisation des objectifs stratégiques traçables",
+      "Infrastructure d'aide à la décision pour les réunions de direction"
     ]
   },
   "cta": {

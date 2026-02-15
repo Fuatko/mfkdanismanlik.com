@@ -14,8 +14,10 @@ const SLUG_TO_KEY: Record<string, string> = {
   "strategic-planning": "strategicPlanning",
   "organization-design": "organizationDesign",
   "performance-management": "performanceManagement",
+  "human-resources": "humanResources",
+  "executive-dashboard": "executiveDashboard",
 };
-const slugs = ["strategic-planning", "organization-design", "performance-management"] as const;
+const slugs = ["strategic-planning", "organization-design", "performance-management", "human-resources", "executive-dashboard"] as const;
 
 export function generateStaticParams() {
   return slugs.flatMap((slug) =>

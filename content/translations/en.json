@@ -22,11 +22,15 @@
     "ctaDesc": "Let's discuss how we can help you achieve your strategic objectives.",
     "cards": {
       "strategicPlanning": "Strategic Planning and Goal Management",
-      "strategicPlanningDesc": "Clarify your goals and bring your strategic plan to life.",
+      "strategicPlanningDesc": "Clear goals, measurable indicators, and a sense of direction across the organization.",
       "organizationDesign": "Organization Design and Structural Architecture",
-      "organizationDesignDesc": "Align your structure with your goals.",
+      "organizationDesignDesc": "Clear roles in the right structure; less ambiguity, better coordination.",
       "performanceManagement": "Performance Management System",
-      "performanceManagementDesc": "Manage performance for measurable results."
+      "performanceManagementDesc": "What gets measured improves; we build a systematic performance structure.",
+      "humanResources": "Human Resources and Competency Architecture",
+      "humanResourcesDesc": "People are strategic capital; the right people, roles, and systems enable sustainable growth.",
+      "executiveDashboard": "Executive Dashboard and Management Reporting",
+      "executiveDashboardDesc": "See the organization in real time, clearly and data-driven; decision clarity."
     },
     "steps": {
       "discover": "Discover",
@@ -43,7 +47,7 @@
   },
   "services": {
     "title": "Services",
-    "tagline": "Management systems: strategic planning, organization design, and performance management",
+    "tagline": "Sustainable achievement of corporate goals is possible with the right structure, clear roles, and measurable performance systems. We aim for an integrated architecture from strategy to daily operations.",
     "serviceAreas": "Our Service Areas",
     "framework": "Our Framework",
     "frameworkBlocks": {
@@ -57,11 +61,15 @@
       "sustainDesc": "Embed capabilities and measure outcomes."
     },
     "strategicPlanning": "Strategic Planning and Goal Management",
-    "strategicPlanningDesc": "Strategic planning, goal cascade, KPI and OKR framework.",
+    "strategicPlanningDesc": "Vision-mission, 3-5 year roadmap, KPIs and executive goal system.",
     "organizationDesign": "Organization Design and Structural Architecture",
-    "organizationDesignDesc": "Org chart, role clarity, structural architecture.",
+    "organizationDesignDesc": "Current structure analysis, roles and responsibilities, authority matrix, job definition cards.",
     "performanceManagement": "Performance Management System",
-    "performanceManagementDesc": "Performance indicators, evaluation and improvement processes."
+    "performanceManagementDesc": "KPI measurement model, 360° evaluation, reporting and feedback mechanisms.",
+    "humanResources": "Human Resources and Competency Architecture",
+    "humanResourcesDesc": "Position-based competency models, recruitment criteria, career and promotion mapping, leadership development.",
+    "executiveDashboard": "Executive Dashboard and Reporting",
+    "executiveDashboardDesc": "Financial and operational indicators on one screen; department performance, goal tracking, decision support."
   },
   "methodology": {
     "title": "Methodology",
@@ -184,47 +192,77 @@
   },
   "strategicPlanning": {
     "title": "Strategic Planning and Goal Management",
-    "tagline": "Clarify your goals. Bring your strategic plan to life.",
+    "tagline": "Corporate success is no accident. It requires clear goals, measurable indicators, and a sense of direction across the organization. Our aim is not just to produce plans but to ensure strategy is executed in the field.",
     "painPoints": [
-      "Unclear goals — Strategy and operations misaligned",
-      "Scattered priorities — Too many initiatives, limited focus",
-      "Execution gaps — Plans that never fully land"
+      "Strategy and operations misaligned — Plans don't come to life on the ground",
+      "No measurable goals — Executive team cannot track progress",
+      "Scattered priorities — No clear 3-5 year roadmap"
     ],
     "deliverables": [
-      "Strategic plan and goal cascade",
-      "KPI and OKR framework",
-      "Annual and quarterly goal set",
-      "Monitoring and governance model"
+      "Clarification of your vision and mission",
+      "Development of a 3-5 year strategic roadmap",
+      "Structured KPIs and performance indicators",
+      "Traceable goal system for top management"
     ]
   },
   "organizationDesign": {
     "title": "Organization Design and Structural Architecture",
-    "tagline": "Align your structure with your goals.",
+    "tagline": "People deliver success—but within the right structure. Clarity of organization is the foundation of performance. The result: less ambiguity, better coordination, and transparent management.",
     "painPoints": [
-      "Unclear roles — Who is accountable for what",
-      "Misaligned structure — Organization not fit for growth or strategy",
-      "Bottlenecks — Inefficient decision and authority distribution"
+      "Unclear roles and responsibilities — Who is accountable for what",
+      "Complex authority and reporting — Slow decision processes",
+      "Outdated job descriptions — Unclear task boundaries"
     ],
     "deliverables": [
-      "Org chart and role definitions",
-      "Structural architecture and reporting lines",
-      "Authority matrix and decision rights",
-      "Transition and implementation plan"
+      "Analysis of current organization structure",
+      "Clarification of roles and responsibilities",
+      "Authority matrix and reporting system design",
+      "Job definition cards and task boundaries"
     ]
   },
   "performanceManagement": {
     "title": "Performance Management System",
-    "tagline": "Manage performance for measurable results.",
+    "tagline": "What gets measured improves. Systematic performance structure is essential for corporate growth. Our aim is not to monitor employees but to manage their development systematically.",
     "painPoints": [
-      "Lack of measurement — Results not tracked quantitatively",
-      "Weak feedback — Employees unaware of goals",
-      "No improvement cycle — Data not used in decision-making"
+      "Performance not tracked quantitatively — Weak KPI and measurement model",
+      "Irregular feedback — No 360° evaluation",
+      "Fragmented reporting — Management cannot use data for decisions"
     ],
     "deliverables": [
-      "Performance indicators (KPI) set",
-      "Evaluation and feedback process",
-      "Dashboard and reporting templates",
-      "Improvement cycle and governance"
+      "KPI-based measurement model",
+      "360° evaluation system",
+      "Competency and result-oriented performance criteria",
+      "Regular reporting and feedback mechanism for management"
+    ]
+  },
+  "humanResources": {
+    "title": "Human Resources and Competency Architecture",
+    "tagline": "People are not a cost but strategic capital. Sustainable growth is possible when the right people, the right roles, and the right systems come together.",
+    "painPoints": [
+      "Missing competency models — Positions not clearly defined",
+      "Subjective hiring criteria — No systematic process",
+      "Unclear career and promotion — No leadership development plan"
+    ],
+    "deliverables": [
+      "Position-based competency model design",
+      "Systematized recruitment criteria",
+      "Career and promotion mapping",
+      "Structured leadership development plans"
+    ]
+  },
+  "executiveDashboard": {
+    "title": "Executive Dashboard and Management Reporting Systems",
+    "tagline": "Top management must see the organization in real time, clearly and based on data. The right reporting system is the basis for the right decision. We turn data complexity into decision clarity.",
+    "painPoints": [
+      "Indicators scattered — No single-screen overview",
+      "Department performance not measurable — Goal achievement unclear",
+      "Management meetings not data-driven — Weak decision support"
+    ],
+    "deliverables": [
+      "Financial and operational indicators on one screen",
+      "Measurable department performance",
+      "Traceable strategic goal achievement rates",
+      "Decision support infrastructure for management meetings"
     ]
   },
   "cta": {

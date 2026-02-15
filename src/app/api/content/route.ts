@@ -4,6 +4,7 @@ import fs from "fs";
 import path from "path";
 import type { Locale } from "@/lib/i18n-constants";
 import { isValidLocale } from "@/lib/i18n-constants";
+import { mergeFileIntoContent } from "@/lib/i18n";
 
 function getSupabaseAnon() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
@@ -32,6 +33,13 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Geçersiz dil" }, { status: 400 });
   }
 
+  let fileContent: Record<string, unknown>;
+  try {
+    fileContent = getContentFromFile(locale);
+  } catch {
+    return NextResponse.json({ error: "İçerik okunamadı" }, { status: 500 });
+  }
+
   const supabase = getSupabaseAnon();
   if (supabase) {
     const { data } = await supabase
@@ -39,21 +47,17 @@ export async function GET(request: Request) {
       .select("content")
       .eq("locale", locale)
       .single();
-    if (data?.content) {
-      return NextResponse.json(data.content as Record<string, unknown>, {
+    if (data?.content && typeof data.content === "object") {
+      const merged = mergeFileIntoContent(fileContent, data.content as Record<string, unknown>);
+      return NextResponse.json(merged, {
         headers: { "Cache-Control": "no-store, max-age=0" },
       });
     }
   }
 
-  try {
-    const content = getContentFromFile(locale);
-    return NextResponse.json(content, {
-      headers: { "Cache-Control": "no-store, max-age=0" },
-    });
-  } catch {
-    return NextResponse.json({ error: "İçerik okunamadı" }, { status: 500 });
-  }
+  return NextResponse.json(fileContent, {
+    headers: { "Cache-Control": "no-store, max-age=0" },
+  });
 }
 
 export async function POST(request: Request) {

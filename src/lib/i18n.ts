@@ -13,6 +13,34 @@ function getContentFromFile(locale: Locale): Record<string, unknown> {
   return JSON.parse(raw) as Record<string, unknown>;
 }
 
+/** Dosyadaki anahtarları Supabase içeriğine ekler (Supabase'de yoksa). Böylece yeni hizmetler/dil güncellemeleri hep görünür. */
+export function mergeFileIntoContent(
+  fileContent: Record<string, unknown>,
+  supabaseContent: Record<string, unknown>
+): Record<string, unknown> {
+  const result = { ...supabaseContent };
+  for (const key of Object.keys(fileContent)) {
+    const fileVal = fileContent[key];
+    const supVal = result[key];
+    if (supVal === undefined || supVal === null) {
+      result[key] = fileVal;
+    } else if (
+      typeof fileVal === "object" &&
+      fileVal !== null &&
+      !Array.isArray(fileVal) &&
+      typeof supVal === "object" &&
+      supVal !== null &&
+      !Array.isArray(supVal)
+    ) {
+      result[key] = mergeFileIntoContent(
+        fileVal as Record<string, unknown>,
+        supVal as Record<string, unknown>
+      );
+    }
+  }
+  return result;
+}
+
 /** Sunucuda içerik her istekte taze okunsun (resim/dil değişikliği hemen görünsün) */
 function getSupabaseNoCache() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
@@ -27,14 +55,16 @@ function getSupabaseNoCache() {
 }
 
 export async function getTranslations(locale: Locale): Promise<Record<string, unknown>> {
+  const fileContent = getContentFromFile(locale);
   const client = getSupabaseNoCache() ?? supabase;
   if (client) {
     const { data } = await client.from("site_content").select("content").eq("locale", locale).single();
     if (data?.content && typeof data.content === "object") {
-      return data.content as Record<string, unknown>;
+      const supabaseContent = data.content as Record<string, unknown>;
+      return mergeFileIntoContent(fileContent, supabaseContent);
     }
   }
-  return getContentFromFile(locale);
+  return fileContent;
 }
 
 export function t(
